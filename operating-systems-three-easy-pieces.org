@@ -1,0 +1,17 @@
+#+TITLE: Operating Systems: Three Easy Pieces Note
+#+DESCRIPTION: This note is a summary of my reading from *Operating System: Three Easy Pieces* by *by Remzi and Andrea Arpaci-Dusseau*
+#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld.me/src/content/note/operating-systems-three-easy-pieces.html
+#+OPTIONS: ^:{} num:nil toc:5
+
+* Introduction to Operating Systems
+
+* Virtulization
+** CPU Virtulization
+** Memory Virtulization
+
+* Concurrency
+
+* Persistance
+
+* Links
+
