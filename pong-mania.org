@@ -2,16 +2,15 @@
 #+AUTHOR: Angel Dhakal
 #+DATE: 2025-11-21
 #+DESCRIPTION: A classic Pong Arcade Game.
-#+KEYWORDS: tech, stack, tags
-#+HTML_HEAD: <meta name="pub_date" content="(format-time-string "%Y-%m-%d")" />
-#+HTML_HEAD: <meta name="updated_date" content="(format-time-string "%Y-%m-%d")" />
+#+KEYWORDS: project, game, pong, golang, html, websockets
+#+HTML_HEAD: <meta name="pub_date" content="2025-11-21" />
+#+HTML_HEAD: <meta name="updated_date" content="2025-11-21" />
 #+HTML_HEAD: <meta name="stack" content="Go, TypeScript, Astro" />
 #+HTML_HEAD: <meta name="platform" content="Web" />
-#+HTML_HEAD: <meta name="website" content="https://example.com" />
-#+HTML_HEAD: <meta name="github" content="https://github.com/xynapz/repo" />
+#+HTML_HEAD: <meta name="website" content="https://angeld.me/project/pong-mania" />
+#+HTML_HEAD: <meta name="github" content="https://github.com/xynapz/pong-mania" />
 #+OPTIONS: ^:{} num:nil toc:5
 #+EXPORT_FILE_NAME: /home/angel/xynapz/angeld.me/src/content/project/pong-mania.html
-
 
 * Introduction
 In 2024, I embarked on an exciting journey to recreate the classic Pong game, but with a modern twist: real-time multiplayer. Pong-Mania leverages modern technologies like Golang, HTMX, and WebSockets to deliver a seamless multiplayer experience where players from around the world can compete against each other in real time.
