@@ -1,5 +1,10 @@
 #+TITLE: Operating Systems: Three Easy Pieces Note
+#+AUTHOR: Angel Dhakal
+#+DATE: 2025-11-21
 #+DESCRIPTION: This note is a summary of my reading from *Operating System: Three Easy Pieces* by *by Remzi and Andrea Arpaci-Dusseau*
+#+KEYWORDS: os, ostep, system
+#+HTML_HEAD: <meta name="pub_date" content="(format-time-string "%Y-%m-%d")" />
+#+HTML_HEAD: <meta name="updated_date" content="(format-time-string "%Y-%m-%d")" />
 #+EXPORT_FILE_NAME: /home/angel/xynapz/angeld.me/src/content/note/operating-systems-three-easy-pieces.html
 #+OPTIONS: ^:{} num:nil toc:5
 
