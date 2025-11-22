@@ -5,7 +5,7 @@
 #+KEYWORDS: project, game, pong, golang, html, websockets
 #+HTML_HEAD: <meta name="pub_date" content="2025-11-21" />
 #+HTML_HEAD: <meta name="updated_date" content="2025-11-21" />
-#+HTML_HEAD: <meta name="stack" content="Go, TypeScript, Astro" />
+#+HTML_HEAD: <meta name="stack" content="Go, HTMX, WebSockets, Tailwind, SQLite" />
 #+HTML_HEAD: <meta name="platform" content="Web" />
 #+HTML_HEAD: <meta name="website" content="https://angeld.me/project/pong-mania" />
 #+HTML_HEAD: <meta name="github" content="https://github.com/xynapz/pong-mania" />
