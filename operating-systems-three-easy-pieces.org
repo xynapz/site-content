@@ -9,6 +9,31 @@
 #+EXPORT_FILE_NAME: /home/angel/xynapz/angeld.me/src/content/note/operating-systems-three-easy-pieces.html
 
 * Introduction to Operating Systems
+** Von-Neuman Model
+When a program is running, its instructions and data are stored in memory. The CPU *fetches* an
+instruction from memory, *decodes* that instruction meaming it figures out what kind of
+instruction is that (ADD, SUB, AND, NAND, JUMP, etc.) then it *executes* that instruction, and
+then it goes on to doing the same process for another instruction, this is the classic
+*Von-Neumann* Mode of computing.
+
+** Operating System
+The operating system is a resource manager that manages the hardware resources, CPU, Memory,
+Disk and creates an *abstraction* for user applications to use. The OS shares the resources like
+CPU, Memory and Disk with all of the running programs, making it seem like each running program
+has its own compute power, own memory, own disk space, but infact it is just virtualizing the
+hardware. The OS also lets the running program interact with devices sharing input/output with
+them.
+
+** API (Application Programming Interface)
+The OS provides an interface for the user application, that they can use when they need to do
+some priviliged instructions like (running a program, allocation memory, accessing a file).
+This *Application Programming Interface* that the OS provides has quite a larget number of system
+calls, that the user can call to do those priviliged instruction.
+
+** Features
+ - *Virtulization*
+ - *Concurrency*
+ - *Persistance*
 
 * Virtulization
 ** CPU Virtulization

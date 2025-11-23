@@ -1,0 +1,18 @@
+#+TITLE: But How Do It Know? - Notes
+#+AUTHOR: Angel Dhakal
+#+DATE: 2025-11-22
+#+DESCRIPTION: Reading notes and explanations from the book *But How Do It Know?* by J. Clark Scott, covering foundational concepts of how computers work.
+#+KEYWORDS: computer architecture, fundamentals, beginner friendly, CPU, logic circuits
+#+OPTIONS: ^:{} num:nil toc:5
+#+HTML_HEAD: <meta name="pub_date" content="2025-11-21" />
+#+HTML_HEAD: <meta name="updated_date" content="2025-11-22" />
+#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld.me/src/content/note/but-how-do-it-know.html
+
+* Speed
+Computers can play games, run complex graphical application, perform compute heavy-task and they seem very complex, How can the computer so all sorts multiple complex calculations at once, How do they handle it?. Well, in reality what they are doing is pretty simple, they are performing basic calculation one instruction at a time, its just that they are doing is so very fast that it looks like it is handling multiple complex things all at once. So, the key thing computers are good are at performing a very simple task at a super fast timeframe.
+
+** How the speed is acheived?
+The power source for the beast known as computer is electricity, when electric signal moves through a wire, it is typically around 2/3 the speed of light in a vaccum (thats why switching a light bulb is very instant), now imagine electric signals, moving around the parts inside the computer, some parts are about a foot long, some are inch, some are shorter than an inch, imagine how quickly the electric signal travels, because the shorter the distance the faster the electricity travels. That is why flipping of billions of transistors in a second is so instant in a micorprocessor.
+* Bit
+* Gates
+* Memory

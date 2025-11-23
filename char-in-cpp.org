@@ -22,3 +22,7 @@ Char is a character data type in C and C++ that is used to represent single *ASC
 
 * char
 char data type is a byte sized (typically *1 Byte* but not always) integral data type that is used to store characters in ASCII format. It is implementation defined meaning it can be any of *signed* or *unsigned* chars, so user should not make any assumption that it is either signed or unsigned. Depending on if it is signed or unsigned, it can store values from and up to *(-128 to 127)* and *(0 to 255)* respectively. When we assign a character literal to a variable, the compiler does a ASCII table lookup and replaces that character with its equivalent numeric ASCII value.
+
+#+begin_src c++
+char a = 'A';
+#+end_src
