@@ -1,0 +1,17 @@
+#+TITLE: C++ Data Structures
+#+AUTHOR: Angel Dhakal
+#+DATE: 2025-11-24
+#+DESCRIPTION: Implementation studies of fundamental data structures in C++
+#+KEYWORDS: c++, data-structures, implementations
+#+OPTIONS: ^:{} num:nil toc:nil html-postamble:nil
+#+HTML_HEAD: <meta name="pub_date" content="2025-11-24" />
+#+HTML_HEAD: <meta name="updated_date" content="2025-11-24" />
+#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld.me/src/content/writings/cpp/data-structures/index.html
+
+* Data Structures
+
+This section contains my implementation studies of fundamental data structures in C++.
+
+** Available Implementations
+- [[./hash-table.html][Custom Hash Table (Separate Chaining)]]
+- [[./vector.html][Vector Implementation (Dynamic Arrays)]]

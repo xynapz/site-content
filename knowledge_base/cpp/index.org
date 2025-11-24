@@ -1,0 +1,33 @@
+#+TITLE: The C++ Engineering Log
+#+AUTHOR: Angel Dhakal
+#+DATE: 2025-11-23
+#+DESCRIPTION: This is a living document of my journey from noob to mastering C++ and systems programming. It contains reference notes, implementation details, and under the hood mechanics.
+#+KEYWORDS: c++, kb, notes
+#+OPTIONS: ^:{} num:nil toc:nil html-postamble:nil
+#+HTML_HEAD: <meta name="pub_date" content="2025-11-23" />
+#+HTML_HEAD: <meta name="updated_date" content="2025-11-23" />
+#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld.me/src/content/writings/cpp/index.html
+
+
+* Welcome
+This is a living document of my journey from noob to mastering C++ and systems programming. It contains reference notes, implementation details, and "under the hood" mechanics.
+
+* The Knowledge Base
+
+** 01. Core Language & Type System
+- [[./core/memory-model.org][Memory Model (Stack vs Heap, RAII)]]
+- [[./core/pointers.org][Pointers & References]]
+- [[./core/const-correctness.org][Const Correctness]]
+
+** 02. Object Oriented Programming
+- [[./oop/rule-of-five.org][The Rule of Five (Memory Management)]]
+- [[./oop/inheritance.org][Virtual Tables & Inheritance]]
+
+** 03. Data Structures (Implementation Studies)
+- [[./data-structures/index.html][Data Structures Index]] - All implementations
+  - [[./data-structures/hash-table.html][Custom Hash Table]]
+  - [[./data-structures/vector.html][Vector Implementation]]
+
+** 04. Standard Template Library (STL)
+- [[./stl/containers.org][Container Overview]]
+- [[./stl/algorithms.org][Algorithm Efficiency]]

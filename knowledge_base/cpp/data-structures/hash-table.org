@@ -1,0 +1,82 @@
+#+TITLE: Custom Hash Table Implementation
+#+AUTHOR: Angel Dhakal
+#+DATE: 2025-11-23
+#+DESCRIPTION: Implementing a hash map from scratch using C-style arrays and separate chaining.
+#+KEYWORDS: cpp, dsa, pointers, memory
+#+OPTIONS: ^:{} num:nil toc:5 html-postamble:nil
+#+HTML_HEAD: <meta name="pub_date" content="2025-11-23" />
+#+HTML_HEAD: <meta name="updated_date" content="2025-11-23" />
+#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld.me/src/content/writings/cpp/data-structures/hash-table.html
+
+
+* Overview
+A manual implementation of a Hash Table to understand memory management, pointer arithmetic, and collision resolution.
+**Strategy:** Separate Chaining using a C-style array of linked list headsss.
+
+[[kb_cpp:data-structures/hash_table.png]]
+* 1. The Architecture
+Instead of using ~std::vector~ or ~std::list~, we use raw pointers to manage memory explicitly.
+
+** The Node Structure
+A template struct holding the generic key/value and a pointer to the next node in the chain.
+
+#+BEGIN_SRC cpp
+template <typename K, typename V>
+struct Node {
+    K key;
+    V value;
+    Node* next;
+
+    Node(K k, V v) : key(k), value(v), next(nullptr) {}
+};
+#+END_SRC
+
+** The Class Members
+The table is a pointer to a pointer (~Node**~), representing an array where each slot holds the address of a Node.
+
+#+BEGIN_SRC cpp
+template <typename K, typename V>
+class HashTable {
+private:
+    Node<K, V>** table; // Array of pointers to buckets
+    size_t capacity;    // Total buckets available
+    size_t size;        // Total elements inserted
+
+    size_t hashFunction(const K& key) const {
+        return std::hash<K>{}(key) % capacity;
+    }
+public:
+    HashTable(size_t cap = 10);
+    ~HashTable();
+};
+#+END_SRC
+
+* 2. Allocation (The Constructor)
+** The Challenge
+We cannot simply call ~new Node[capacity]~ because we want an array of *pointers*, not objects. Furthermore, C++ does not zero-initialize primitive arrays by default.
+
+** The Implementation
+#+BEGIN_SRC cpp
+HashTable(size_t cap) : capacity(cap), size(0) {
+    // Allocate space for 'capacity' number of pointers
+    table = new Node<K, V>*[capacity];
+
+    // CRITICAL: Initialize all slots to nullptr.
+    // Without this, they contain garbage addresses -> segfault on access.
+    for (size_t i = 0; i < capacity; ++i) {
+        table[i] = nullptr;
+    }
+}
+#+END_SRC
+
+* 3. Collision Handling
+** Concept
+When ~hash(key1) == hash(key2)~, we append the new node to the linked list at that bucket index.
+
+** Bear Traps :warning:
+- **Iterating:** Iterating strictly over the array is inefficient if load factor is low (sparse).
+- **Deletion:** Requires tracking ~prev~ pointers to unlink nodes safely.
+
+* Resources
+- [[https://en.cppreference.com/w/cpp/container/unordered_map][std::unordered_map documentation]]
+- [[file:../oop/rule-of-five.org][Related: The Rule of Five]]

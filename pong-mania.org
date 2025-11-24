@@ -9,7 +9,7 @@
 #+HTML_HEAD: <meta name="platform" content="Web" />
 #+HTML_HEAD: <meta name="website" content="https://angeld.me/project/pong-mania" />
 #+HTML_HEAD: <meta name="github" content="https://github.com/xynapz/pong-mania" />
-#+OPTIONS: ^:{} num:nil toc:5
+#+OPTIONS: ^:{} num:nil toc:5 html-postamble:nil
 #+EXPORT_FILE_NAME: /home/angel/xynapz/angeld.me/src/content/project/pong-mania.html
 
 * Introduction
