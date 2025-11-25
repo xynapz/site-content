@@ -1,0 +1,11 @@
+#+TITLE: Chaos to Config: Mastering Bash to Tame The Arch
+#+AUTHOR: Angel Dhakal
+#+DATE: 2025-11-25
+#+DESCRIPTION: This is my journey of saying *yeah, i have no problem scripting with bash* and doing it so by writing a script that reproduces my arch linux envirionment from my dotfiles repository.
+#+KEYWORDS: bash, linux, arch, git, scripting, dotfile, automating, system
+#+OPTIONS: ^:{} num:nil toc:5 html-postamble:nil
+#+HTML_HEAD: <meta name="pub_date" content="2025-11-25" />
+#+HTML_HEAD: <meta name="updated_date" content="2025-11-25" />
+#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld.me/src/content/writings/chaos-to-config-mastering-bash-to-tame-the-arch.html
+
+* Taming the Arch
