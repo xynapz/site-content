@@ -6,7 +6,7 @@
 #+OPTIONS: ^:{} num:nil toc:5 html-postamble:nil
 #+HTML_HEAD: <meta name="pub_date" content="2025-11-23" />
 #+HTML_HEAD: <meta name="updated_date" content="2025-11-23" />
-#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld.me/src/content/writings/cpp/data-structures/hash-table.html
+#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld.me/src/content/writings/cpp/ds/hash-table.html
 
 * Hashtable implementation using seperate chaining.
 ** Current Goal
