@@ -1,0 +1,35 @@
+
+#+TITLE: static code comment parser in c
+#+AUTHOR: Angel Dhakal
+#+DATE: 2025-11-24
+#+DESCRIPTION: mdpr is a command-line tool written in C that parses multi-line code blocks within a markdown file and extracts only the relevant code content. This is particularly useful for extracting code snippets from large markdown files containing documentation or tutorials.
+#+HTML_HEAD: <meta name="pub_date" content="2025-11-24" />
+#+HTML_HEAD: <meta name="updated_date" content="2025-11-24" />
+#+HTML_HEAD: <meta name="stack" content="C, Markdown" />
+#+HTML_HEAD: <meta name="platform" content="Web" />
+#+HTML_HEAD: <meta name="website" content="/project/mdpr" />
+#+HTML_HEAD: <meta name="github" content="https://github.com/xynapz/mdpr" />
+#+OPTIONS: ^:{} num:nil toc:5 html-postamble:nil
+#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld.me/src/content/project/mdpr.html
+
+* Project Name
+
+
+* mdpr - Multi-line Markdown Parser
+mdpr is a command-line tool written in C that parses multi-line code blocks within a markdown file and extracts only the relevant code content. This is particularly useful for extracting code snippets from large markdown files containing documentation or tutorials.
+** Features
+- Parses multi-line code blocks delimited by opening (/*) and closing (*/) comments.
+- Ignores leading and trailing whitespace within the block.
+- Trims leading and trailing spaces from each line of code within the block.
+- Outputs the extracted code content to a specified output file.
+** Usage
+mdpr takes two arguments:
+- -f: Path to the input markdown file containing the code blocks.
+- -o: Path to the output file where the extracted code will be written.
+ *Example:*
+ #+begin_src bash
+./mdpr -f test_file.c -o test_file.md
+ #+end_src
+This command will parse the test_file.c file for multi-line code blocks and write the extracted code to test_file.md.
+
+
