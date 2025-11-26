@@ -20,9 +20,9 @@ To understand C is to understand the machine. It forces you to think about:
 I categorize my C notes into specific domains of complexity:
 
 1. [[./memory/index.org][Memory Management]]: Beyond ~malloc~ and ~free~. Custom allocators, alignment, and cache locality.
-2. [[../cpp/ds/index.org][Data Structures]]: Implementation of ring buffers, hash maps, and invasive lists.
+2. [[../../cpp/ds/index.org][Data Structures]]: Implementation of ring buffers, hash maps, and invasive lists.
 3. *Concurrency*: Pthreads, atomics, and memory ordering (WIP).
 
 * Related Resources
-- [[../../operating-systems-three-easy-pieces.org][Operating Systems: Three Easy Pieces]] - Essential reading for understanding the heap vs. stack.
-- [[../../but-how-do-it-know-notes.org][Hardware Architecture]] - The physical reality behind the pointers.
+- [[../../../operating-systems-three-easy-pieces.org][Operating Systems: Three Easy Pieces]] - Essential reading for understanding the heap vs. stack.
+- [[../../../but-how-do-it-know-notes.org][Hardware Architecture]] - The physical reality behind the pointers.
