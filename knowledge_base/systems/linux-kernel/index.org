@@ -1,0 +1,31 @@
+#+TITLE: Linux Kernel Internals
+#+AUTHOR: Angel Dhakal
+#+DATE: 2025-11-26
+#+DESCRIPTION: Deep dives into the Linux Kernel: Scheduler, Memory Management, and Device Drivers.
+#+KEYWORDS: linux, kernel, systems, c, internals
+#+OPTIONS: ^:{} num:nil toc:nil html-postamble:nil
+#+HTML_HEAD: <meta name="featured" content="true" />
+#+HTML_HEAD: <meta name="pub_date" content="2025-11-26" />
+#+HTML_HEAD: <meta name="updated_date" content="2025-11-26" />
+#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld.me/src/content/writings/systems/linux-kernel/index.html
+
+* Introduction
+This section explores the heart of the operating system. While the [[../../linux/index.org][User Space]] section covers how to *use* and *configure* Linux, this section covers how Linux *works*.
+
+* Core Subsystems
+/Content coming soon.../
+** Process Management
+- The Scheduler (CFS, EEVDF)
+- Context Switching
+
+** Memory Management
+- Virtual Memory
+- Paging & Slab Allocators
+
+** Filesystems
+- VFS (Virtual File System)
+- Ext4, Btrfs, XFS internals
+
+** Device Drivers
+- Character vs Block Devices
+- Kernel Modules
