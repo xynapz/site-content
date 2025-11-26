@@ -1,4 +1,4 @@
-#+TITLE: The C Programming Language
+#+TITLE: The C Programming Language Notes
 #+AUTHOR: Angel Dhakal
 #+DATE: 2025-11-25
 #+DESCRIPTION: My notes and resources for learning c programming-language

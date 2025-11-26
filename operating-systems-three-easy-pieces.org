@@ -10,7 +10,7 @@
 
 * Introduction to Operating Systems
 I'm reading through the OSTEP book to finally wrap my head around how operating systems actually work.
-It's one thing to use Linux every day, but understanding the magic behind the scheduler and memory 
+It's one thing to use Linux every day, but understanding the magic behind the scheduler and memory
 management is a whole different beast.
 
 ** Von-Neuman Model

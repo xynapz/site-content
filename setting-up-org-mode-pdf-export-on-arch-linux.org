@@ -100,7 +100,7 @@ Here's the relevant part of my generated =.tex= file:
 \usepackage{fontspec}
 #+END_SRC
 
-The =fontspec= package is fantastic for modern LaTeX documents—it lets you use system fonts directly and handles Unicode properly. But it fundamentally doesn't work with pdfLaTeX.
+The =fontspec= package is fantastic for modern LaTeX documents, essentially it lets you use system fonts directly and handles Unicode properly. But it fundamentally doesn't work with pdfLaTeX.
 
 ** Why This Matters
 
@@ -142,9 +142,7 @@ My Org mode configuration lives in =~/.emacs.d/lisp/xz-package.el=. The relevant
 Here's the context: I have a custom setup where Org files in my =~/xynapz/angeld.me/site-content/= directory export to HTML without default styles or scripts (because my Astro site provides those), while personal Org files keep the default formatting. This conditional behavior is handled by checking the file path during export.
 
 ** The LaTeX Configuration Changes
-
 I needed to update the =ox-latex= configuration block. Here's what I changed:
-
 #+BEGIN_SRC elisp
 (use-package ox-latex
   :ensure nil
