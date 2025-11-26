@@ -9,7 +9,6 @@
 #+EXPORT_FILE_NAME: /home/angel/xynapz/angeld.me/src/content/writings/cpp/ds/index.html
 
 * Data Structures
-
 This section contains my implementation studies of fundamental data structures in C++.
 
 ** Available Implementations

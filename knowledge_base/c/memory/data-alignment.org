@@ -1,0 +1,61 @@
+#+TITLE: Data Alignment and CPU Architecture
+#+PARENT: [[file:index.org][Memory Management]]
+#+AUTHOR: Angel Dhakal
+#+DATE: 2025-11-25
+#+DESCRIPTION: My research and notes on structure padding in c
+#+KEYWORDS: c, memory, systems, os, performace, optimization
+#+OPTIONS: ^:{} num:nil toc:5 html-postamble:nil
+#+HTML_HEAD: <meta name="pub_date" content="2025-11-25" />
+#+HTML_HEAD: <meta name="updated_date" content="2025-11-25" />
+#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld.me/src/content/writings/c/memory/data-alignment.html
+
+* The Concept
+Modern CPUs do not read memory one byte at a time; they read in "words" (usually 64-bit/8 bytes on modern x64 machines). If a 4-byte integer crosses a word boundary, the CPU must perform two memory fetches and bit-shift them together. This is called a *misaligned access*.
+
+** Visualizing Alignment
+Imagine memory as a grid of 8-byte rows.
+
+| Address | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 |                              |
+|---------+---+---+---+---+---+---+---+---+------------------------------|
+|    0x00 | X | X | X | X |   |   |   |   | <--- Aligned 4-byte int      |
+|    0x08 |   |   |   |   |   |   |   | Y | <--- Start of Misaligned int |
+|    0x10 | Y | Y | Y |   |   |   |   |   | <--- End of Misaligned int   |
+
+* The Alignment Formula
+To align an address $ptr$ to a boundary $a$ (where $a$ is a power of 2), we use the following bitwise formula:
+
+$$ \text{aligned\_ptr} = (ptr + a - 1) \ \& \ \sim(a - 1) $$
+
+** Derivation:
+1. We add $a - 1$ to the pointer. This pushes the address past the next boundary unless it is already aligned.
+2. We mask out the lower bits using $\sim(a-1)$.
+
+Example where $a=4$ (binary `100`):
+$ptr = 1$ (`001`)
+$ptr + 3 = 4$ (`100`)
+Mask is $\sim 3$ (`...11100`)
+Result: `100` & `...11100` = `100` (4).
+
+* Struct Padding
+The C compiler automatically inserts padding bytes to satisfy alignment requirements. This can lead to "bloated" structs if fields are not ordered by size.
+
+#+begin_src c
+// Size: 24 bytes (on 64-bit machine)
+struct PoorlyPacked {
+    char c;      // 1 byte
+    // 7 bytes padding inserted here!
+    double d;    // 8 bytes
+    int i;       // 4 bytes
+    // 4 bytes padding inserted here!
+};
+
+// Size: 16 bytes
+struct Packed {
+    double d;    // 8 bytes
+    int i;       // 4 bytes
+    char c;      // 1 byte
+    // 3 bytes padding
+};
+#+end_src
+
+> *Note:* You can force packing with `__attribute__((packed))`, but this will cause the performance penalty of unaligned access described above.

@@ -1,0 +1,28 @@
+#+TITLE: The C Programming Language
+#+AUTHOR: Angel Dhakal
+#+DATE: 2025-11-25
+#+DESCRIPTION: My notes and resources for learning c programming-language
+#+KEYWORDS: systems, clang, c, programming-language
+#+OPTIONS: ^:{} num:nil toc:5 html-postamble:nil
+#+HTML_HEAD: <meta name="pub_date" content="2025-11-25" />
+#+HTML_HEAD: <meta name="updated_date" content="2025-11-25" />
+#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld.me/src/content/writings/c/index.html
+
+* Philosophy & Context
+C is not just a language; it is the portable assembly of the modern world. Despite the rise of Rust and Zig, C remains the *lingua franca* of systems interfaces (ABIs).
+
+To understand C is to understand the machine. It forces you to think about:
+- Stack frames and calling conventions.
+- The virtual memory map.
+- The cost of abstraction.
+
+* Core Modules
+I categorize my C notes into specific domains of complexity:
+
+1. [[./memory/index.org][Memory Management]]: Beyond ~malloc~ and ~free~. Custom allocators, alignment, and cache locality.
+2. [[../cpp/ds/index.org][Data Structures]]: Implementation of ring buffers, hash maps, and invasive lists.
+3. *Concurrency*: Pthreads, atomics, and memory ordering (WIP).
+
+* Related Resources
+- [[../../operating-systems-three-easy-pieces.org][Operating Systems: Three Easy Pieces]] - Essential reading for understanding the heap vs. stack.
+- [[../../but-how-do-it-know-notes.org][Hardware Architecture]] - The physical reality behind the pointers.

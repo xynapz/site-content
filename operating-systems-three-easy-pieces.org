@@ -9,6 +9,10 @@
 #+EXPORT_FILE_NAME: /home/angel/xynapz/angeld.me/src/content/writings/operating-systems-three-easy-pieces.html
 
 * Introduction to Operating Systems
+I'm reading through the OSTEP book to finally wrap my head around how operating systems actually work.
+It's one thing to use Linux every day, but understanding the magic behind the scheduler and memory 
+management is a whole different beast.
+
 ** Von-Neuman Model
 When a program is running, its instructions and data are stored in memory. The CPU *fetches* an
 instruction from memory, *decodes* that instruction meaming it figures out what kind of

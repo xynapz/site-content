@@ -1,0 +1,24 @@
+#+TITLE: Memory Management Strategies
+#+PARENT: [[file:../index.org][C Language]]
+#+AUTHOR: Angel Dhakal
+#+DATE: 2025-11-25
+#+DESCRIPTION: Memory management notes in c
+#+KEYWORDS: memory, heap, stack, c, os, systems
+#+OPTIONS: ^:{} num:nil toc:5 html-postamble:nil
+#+HTML_HEAD: <meta name="pub_date" content="2025-11-25" />
+#+HTML_HEAD: <meta name="updated_date" content="2025-11-25" />
+#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld.me/src/content/writings/c/memory/index.html
+
+
+* The Illusion of the Heap
+We often treat memory as an infinite tape provided by ~malloc()~. In reality, the heap is a complex negotiation between the C runtime (libc) and the kernel.
+
+When we request memory, we are usually interacting with a general-purpose allocator (dlmalloc, jemalloc, mimalloc). However, for high-performance systems (like game engines or high-frequency trading), general-purpose allocators are bottlenecks due to:
+
+1. *Lock Contention*: Thread safety overhead.
+2. *Fragmentation*: Holes in the heap causing poor cache locality.
+3. *Header Overhead*: Metadata storage for every allocation.
+
+* Topics
+- [[./arena-allocator.org][Arena (Linear) Allocators]]: The $O(1)$ allocation strategy.
+- [[./data-alignment.org][Data Alignment & Padding]]: Why CPU word size matters.
