@@ -8,7 +8,7 @@
 #+HTML_HEAD: <meta name="updated_date" content="2025-11-25" />
 #+EXPORT_FILE_NAME: /home/angel/xynapz/angeld.me/src/content/writings/c/index.html
 
-* Philosophy & Context
+* Context
 C is not just a language; it is the portable assembly of the modern world. Despite the rise of Rust and Zig, C remains the *lingua franca* of systems interfaces (ABIs).
 
 To understand C is to understand the machine. It forces you to think about:
