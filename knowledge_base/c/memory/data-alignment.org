@@ -24,7 +24,7 @@ Imagine memory as a grid of 8-byte rows.
 * The Alignment Formula
 To align an address $ptr$ to a boundary $a$ (where $a$ is a power of 2), we use the following bitwise formula:
 
-$$ \text{aligned\_ptr} = (ptr + a - 1) \ \& \ \sim(a - 1) $$
+$$ \text{aligned_ptr} = (ptr + a - 1) \ \& \ \sim(a - 1) $$
 
 ** Derivation:
 1. We add $a - 1$ to the pointer. This pushes the address past the next boundary unless it is already aligned.
