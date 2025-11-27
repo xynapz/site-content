@@ -7,7 +7,7 @@
 #+OPTIONS: ^:{} num:nil toc:5 html-postamble:nil
 #+HTML_HEAD: <meta name="pub_date" content="2025-11-25" />
 #+HTML_HEAD: <meta name="updated_date" content="2025-11-25" />
-#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld.me/src/content/writings/c/memory/data-alignment.html
+#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld.me/src/content/writings/systems/c/memory/data-alignment.html
 
 * The Concept
 Modern CPUs do not read memory one byte at a time; they read in "words" (usually 64-bit/8 bytes on modern x64 machines). If a 4-byte integer crosses a word boundary, the CPU must perform two memory fetches and bit-shift them together. This is called a *misaligned access*.

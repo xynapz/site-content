@@ -6,7 +6,7 @@
 #+OPTIONS: ^:{} num:nil toc:5 html-postamble:nil
 #+HTML_HEAD: <meta name="pub_date" content="2025-11-25" />
 #+HTML_HEAD: <meta name="updated_date" content="2025-11-25" />
-#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld.me/src/content/writings/c/memory/arena-allocator.html
+#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld.me/src/content/writings/systems/c/memory/arena-allocator.html
 
 * Theory
 An Arena (or Linear) allocator works by pre-allocating a large contiguous block of memory and utilizing a simple "bump pointer" to dole out sub-blocks.
