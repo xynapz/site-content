@@ -1,0 +1,67 @@
+#+TITLE: Chaos To Config: Mastering Bash To Tame Arch
+#+AUTHOR: Angel Dhakal
+#+DATE: 2025-11-28
+#+DESCRIPTION: My log of learning and mastering bash to automate setting up my arch system along with my dotfiles with just a curl command.
+#+KEYWORDS: linux, arch, bash, automation, devops
+#+OPTIONS: ^:{} num:nil toc:nil html-postamble:nil
+#+HTML_HEAD: <meta name="featured" content="true" />
+#+HTML_HEAD: <meta name="pub_date" content="2025-11-26" />
+#+HTML_HEAD: <meta name="updated_date" content="2025-11-26" />
+#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld.me/src/content/writings/linux/chaos-to-config.html
+
+* Series: From Chaos to Config
+/Mastering Bash to Tame Arch/
+** The Roadmap
+
+*** Part 0: The Manifesto
+/Why manual installation is a trap and Bash is the universal glue./
+- The philosophy of "Infrastructure as Code" for personal desktops.
+- Setting up the project structure.
+- Prerequisites and tooling.
+
+*** Part 1: From Silicon to Systemd
+/What actually happens when you press the power button?/
+- *Theory:* [[../systems/index.org][UEFI, Bootloaders]], [[../systems/linux-kernel/index.org][Kernel hand-off]], and PID 1.
+- *Script:* Building the safety checks (UEFI detection, Root privileges, Logging).
+
+*** Part 2: The Architect & The Mason
+/Mastering Package Management./
+- *Theory:* Pacman, ALPM, and the risks/rewards of the AUR.
+- *Script:* Automating the compilation of AUR helpers (Paru/Yay) and dependency arrays.
+
+*** Part 3: The Graphics Stack
+/Putting pixels on the screen./
+- *Theory:* Kernel Mode Setting (KMS), DRM, and the X11 vs. Wayland architecture.
+- *Script:* GPU hardware detection (`lspci`) and conditional driver installation (Nvidia/AMD).
+
+*** Part 4: The Engine (Hyprland)
+/Compositors and Protocols./
+- *Theory:* The Compositor as the Display Server (`wlroots`) and XDG Portals.
+- *Script:* Installing the core desktop environment and session variables.
+
+*** Part 5: The Ecosystem
+/The components that make a desktop usable./
+- *Theory:* Pipewire (Audio), Waybar (Status), and Polkit (Auth).
+- *Script:* Looping through component installation and font management.
+
+*** Part 6: Controlled Chaos (Dotfiles)
+/Configuration Management./
+- *Theory:* XDG Base Directories and the Symlink philosophy.
+- *Script:* Implementing `GNU Stow` logic and backup strategies within Bash.
+
+*** Part 7: The Final Boot
+/Optimization, Login, and Maintenance./
+- *Theory:* Display Managers (SDDM) and TTYs.
+- *Script:* Service activation (`systemctl`), shell setup, and the final reboot hook.
+
+*** Part 8: Review & Retrospective
+/Lessons learned from the build./
+- Full code repository.
+- Future-proofing the script against rolling releases.
+
+* Resources
+- [[https://wiki.archlinux.org/][Arch Wiki]]
+- [[https://www.gnu.org/software/bash/manual/][GNU Bash Manual]]
+- [[https://hyprland.org/][Hyprland Documentation]]
+- [[https://kernel.org/][The Linux Kernel Archives]]
+

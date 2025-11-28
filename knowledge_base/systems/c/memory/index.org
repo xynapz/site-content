@@ -19,6 +19,3 @@ When we request memory, we are usually interacting with a general-purpose alloca
 2. *Fragmentation*: Holes in the heap causing poor cache locality.
 3. *Header Overhead*: Metadata storage for every allocation.
 
-* Topics
-- [[./arena-allocator.org][Arena (Linear) Allocators]]: The $O(1)$ allocation strategy.
-- [[./data-alignment.org][Data Alignment & Padding]]: Why CPU word size matters.
