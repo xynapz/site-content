@@ -10,27 +10,12 @@
 #+EXPORT_FILE_NAME: /home/angel/xynapz/angeld.me/src/content/writings/systems/index.html
 
 * Introduction
-This section covers the "under the hood" aspects of computing. While the root-level [[file:../linux/index.org][Linux]] section focuses on user-space utilities, administration, and customization, this *Systems* category dives into how the machine actually works—from the hardware initialization up to the kernel.
+This note covers my learning and research of systems and computing. While the root-level [[file:../linux/index.org][Linux]] section focuses on user-space utilities, administration, and customization, this *Systems* category dives into how the machine actually works all the way from the hardware initialization level.
 
 * Languages
 ** [[file:c/index.org][C Programming]]
 The lingua franca of systems programming.
 
-* Hardware & Initialization
-/Content coming soon.../
-** Firmware
-** BIOS
-** UEFI
-** [[file:but-how-do-it-know-notes.org][But How Do It Know? (Notes)]]
-
-* The Boot Process
-/Content coming soon.../
-** Bootloaders
-** Kernel Loading
-
 * Kernel Internals
-/Content coming soon.../
-** Memory Management
-** [[file:linux-kernel/index.org][Linux Kernel]]
-** [[file:operating-systems-three-easy-pieces.org][Operating Systems: Three Easy Pieces (Notes)]]
-** Process Scheduling
+** [[./linux-kernel/index.org][Linux Kernel]]
+** [[./operating-systems-three-easy-pieces.org][Operating Systems: Three Easy Pieces (Notes)]]

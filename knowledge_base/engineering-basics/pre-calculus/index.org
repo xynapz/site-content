@@ -1,0 +1,12 @@
+#+TITLE: Pre-Calculus
+#+AUTHOR: Angel Dhakal
+#+DATE: 2025-12-03
+#+DESCRIPTION: Pre-Calculus and Some Begineer Calculus-I Notes
+#+KEYWORDS: pre-calculus, calculus, mathematics
+#+OPTIONS: ^:{} num:nil toc:5 html-postamble:nil
+#+HTML_HEAD: <meta name="pub_date" content="2025-12-03" />
+#+HTML_HEAD: <meta name="updated_date" content="2025-12-03" />
+#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld.me/src/content/writings/engineering-basics/pre-calculus/index.html
+
+* Introduction
+* Concepts to Learn

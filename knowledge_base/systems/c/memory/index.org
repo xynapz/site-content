@@ -10,7 +10,7 @@
 #+EXPORT_FILE_NAME: /home/angel/xynapz/angeld.me/src/content/writings/systems/c/memory/index.html
 
 
-* The Illusion of the Heap
+* Introduction
 We often treat memory as an infinite tape provided by ~malloc()~. In reality, the heap is a complex negotiation between the C runtime (libc) and the kernel.
 
 When we request memory, we are usually interacting with a general-purpose allocator (dlmalloc, jemalloc, mimalloc). However, for high-performance systems (like game engines or high-frequency trading), general-purpose allocators are bottlenecks due to:
