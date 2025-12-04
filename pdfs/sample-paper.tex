@@ -1,0 +1,172 @@
+\documentclass[12pt,a4paper]{article}
+
+% Packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\usepackage{hyperref}
+
+\geometry{margin=1in}
+
+\newtheorem{theorem}{Theorem}
+
+\lstset{
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue},
+    commentstyle=\color{gray},
+    stringstyle=\color{red},
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    frame=single,
+    breaklines=true
+}
+
+\title{Sample Research Paper: Data Structures and Algorithms}
+\author{Angel Dhakal}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This is a sample LaTeX document demonstrating various features commonly used in academic papers. It includes mathematical equations, code listings, tables, and figures. This document can serve as a template for your academic writing.
+\end{abstract}
+
+\section{Introduction}
+
+This document demonstrates the basic structure of an academic paper written in LaTeX. LaTeX is particularly well-suited for documents containing mathematical notation and technical content.
+
+Some key advantages of LaTeX include:
+\begin{itemize}
+    \item Professional typesetting of mathematical formulas
+    \item Automatic numbering and cross-referencing
+    \item Consistent formatting throughout the document
+    \item Excellent bibliography management
+\end{itemize}
+
+\section{Mathematical Notation}
+
+\subsection{Basic Equations}
+
+The quadratic formula is given by:
+\begin{equation}
+    x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+    \label{eq:quadratic}
+\end{equation}
+
+Euler's identity, considered one of the most beautiful equations in mathematics:
+\begin{equation}
+    e^{i\pi} + 1 = 0
+\end{equation}
+
+\subsection{Advanced Mathematics}
+
+The Taylor series expansion of a function $f(x)$ around point $a$ is:
+\begin{equation}
+    f(x) = \sum_{n=0}^{\infty} \frac{f^{(n)}(a)}{n!}(x-a)^n
+\end{equation}
+
+Matrix operations in linear algebra:
+\begin{equation}
+    A = \begin{pmatrix}
+        a_{11} & a_{12} & a_{13} \\
+        a_{21} & a_{22} & a_{23} \\
+        a_{31} & a_{32} & a_{33}
+    \end{pmatrix}
+\end{equation}
+
+\section{Code Examples}
+
+Here's a simple Python implementation of binary search:
+
+\begin{lstlisting}[language=Python, caption=Binary Search Algorithm]
+def binary_search(arr, target):
+    left, right = 0, len(arr) - 1
+
+    while left <= right:
+        mid = (left + right) // 2
+
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
+
+    return -1
+\end{lstlisting}
+
+\section{Tables and Data}
+
+Table~\ref{tab:complexity} shows the time complexity of common algorithms.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|l|l|}
+\hline
+\textbf{Algorithm} & \textbf{Best} & \textbf{Average} & \textbf{Worst} \\
+\hline
+Bubble Sort & $O(n)$ & $O(n^2)$ & $O(n^2)$ \\
+Quick Sort & $O(n\log n)$ & $O(n\log n)$ & $O(n^2)$ \\
+Merge Sort & $O(n\log n)$ & $O(n\log n)$ & $O(n\log n)$ \\
+Binary Search & $O(1)$ & $O(\log n)$ & $O(\log n)$ \\
+\hline
+\end{tabular}
+\caption{Time Complexity of Common Algorithms}
+\label{tab:complexity}
+\end{table}
+
+\section{Theorems and Proofs}
+
+\begin{theorem}[Pythagorean Theorem]
+In a right triangle, the square of the hypotenuse is equal to the sum of squares of the other two sides:
+\[
+c^2 = a^2 + b^2
+\]
+\end{theorem}
+
+\begin{proof}
+This can be proven using geometric construction or algebraic manipulation. The proof is left as an exercise to the reader.
+\end{proof}
+
+\section{Cross-References}
+
+We can reference Equation~\ref{eq:quadratic} from earlier in the document. Similarly, we can refer to Table~\ref{tab:complexity} or any numbered element.
+
+\section{Lists and Enumeration}
+
+\subsection{Ordered List}
+\begin{enumerate}
+    \item First step: Initialize variables
+    \item Second step: Process input
+    \item Third step: Return result
+\end{enumerate}
+
+\subsection{Unordered List}
+\begin{itemize}
+    \item Data structures
+    \item Algorithms
+    \item Complexity analysis
+    \item Design patterns
+\end{itemize}
+
+\section{Conclusion}
+
+This sample document demonstrates the basic features of LaTeX for academic writing. LaTeX provides excellent support for mathematical typesetting, code listings, tables, and cross-referencing, making it ideal for technical and scientific documentation.
+
+\subsection{Further Reading}
+
+For more information on LaTeX, consult:
+\begin{itemize}
+    \item The LaTeX Project: \url{https://www.latex-project.org/}
+    \item Overleaf Documentation: \url{https://www.overleaf.com/learn}
+    \item Stack Exchange TeX: \url{https://tex.stackexchange.com/}
+\end{itemize}
+
+\end{document}
