@@ -1,0 +1,63 @@
+================================================================================
+ SITE CONTENT EXPORT STATISTICS
+ ================================================================================
+ Execution Time:   2025-11-28 04:39:25
+ Target Directory: ~/xynapz/angeld.me/site-content/
+ Total Documents:  16
+ Total Size:       43k
+ 
+ Document List:
+ - hash-table.org (3.2k, 2025-11-25 22:56:16)
+- index.org (644, 2025-11-25 22:56:34)
+- index.org (1k, 2025-11-26 15:04:02)
+- chaos-to-config.org (2.8k, 2025-11-28 04:34:38)
+- index.org (2k, 2025-11-28 04:36:55)
+- setting-up-org-mode-pdf-export-on-arch-linux.org (14k, 2025-11-28 04:37:31)
+- arena-allocator.org (2.6k, 2025-11-26 19:13:14)
+- data-alignment.org (2.4k, 2025-11-26 19:13:16)
+- index.org (1.2k, 2025-11-26 19:13:12)
+- index.org (1.4k, 2025-11-26 19:13:10)
+- index.org (1.1k, 2025-11-26 18:31:31)
+- but-how-do-it-know-notes.org (1.8k, 2025-11-26 18:37:58)
+- index.org (1.4k, 2025-11-26 18:38:02)
+- operating-systems-three-easy-pieces.org (2.3k, 2025-11-26 18:38:00)
+- mdpr.org (2.2k, 2025-11-25 22:18:41)
+- pong-mania.org (2.6k, 2025-11-25 00:49:33)
+ ================================================================================
+ [LOGS START]
+ [2025-11-28 04:39:25] [INFO] Starting site content export...
+[2025-11-28 04:39:25] [INFO] Processing hash-table.org...
+[2025-11-28 04:39:25] [INFO] Successfully exported hash-table.org
+[2025-11-28 04:39:25] [INFO] Processing index.org...
+[2025-11-28 04:39:25] [INFO] Successfully exported index.org
+[2025-11-28 04:39:25] [INFO] Processing index.org...
+[2025-11-28 04:39:25] [INFO] Successfully exported index.org
+[2025-11-28 04:39:25] [INFO] Processing chaos-to-config.org...
+[2025-11-28 04:39:25] [INFO] Successfully exported chaos-to-config.org
+[2025-11-28 04:39:25] [INFO] Processing index.org...
+[2025-11-28 04:39:25] [INFO] Successfully exported index.org
+[2025-11-28 04:39:25] [INFO] Processing setting-up-org-mode-pdf-export-on-arch-linux.org...
+[2025-11-28 04:39:25] [INFO] Successfully exported setting-up-org-mode-pdf-export-on-arch-linux.org
+[2025-11-28 04:39:25] [INFO] Processing arena-allocator.org...
+[2025-11-28 04:39:26] [INFO] Successfully exported arena-allocator.org
+[2025-11-28 04:39:26] [INFO] Processing data-alignment.org...
+[2025-11-28 04:39:26] [INFO] Successfully exported data-alignment.org
+[2025-11-28 04:39:26] [INFO] Processing index.org...
+[2025-11-28 04:39:26] [INFO] Successfully exported index.org
+[2025-11-28 04:39:26] [INFO] Processing index.org...
+[2025-11-28 04:39:26] [INFO] Successfully exported index.org
+[2025-11-28 04:39:26] [INFO] Processing index.org...
+[2025-11-28 04:39:26] [INFO] Successfully exported index.org
+[2025-11-28 04:39:26] [INFO] Processing but-how-do-it-know-notes.org...
+[2025-11-28 04:39:26] [INFO] Successfully exported but-how-do-it-know-notes.org
+[2025-11-28 04:39:26] [INFO] Processing index.org...
+[2025-11-28 04:39:26] [INFO] Successfully exported index.org
+[2025-11-28 04:39:26] [INFO] Processing operating-systems-three-easy-pieces.org...
+[2025-11-28 04:39:26] [INFO] Successfully exported operating-systems-three-easy-pieces.org
+[2025-11-28 04:39:26] [INFO] Processing mdpr.org...
+[2025-11-28 04:39:26] [INFO] Successfully exported mdpr.org
+[2025-11-28 04:39:26] [INFO] Processing pong-mania.org...
+[2025-11-28 04:39:26] [INFO] Successfully exported pong-mania.org
+[2025-11-28 04:39:26] [INFO] Starting Clean Build (removing orphans)...
+[2025-11-28 04:39:26] [INFO] Clean Build complete. Orphans removed: 0
+[2025-11-28 04:39:26] [INFO] Export complete. Success: 16, Failed: 0

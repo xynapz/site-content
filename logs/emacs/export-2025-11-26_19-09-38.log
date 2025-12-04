@@ -1,0 +1,64 @@
+================================================================================
+ SITE CONTENT EXPORT STATISTICS
+ ================================================================================
+ Execution Time:   2025-11-26 19:09:38
+ Target Directory: ~/xynapz/angeld.me/site-content/
+ Total Documents:  15
+ Total Size:       42k
+ 
+ Document List:
+ - hash-table.org (3.2k, 2025-11-25 22:56:16)
+- index.org (644, 2025-11-25 22:56:34)
+- index.org (1k, 2025-11-26 15:04:02)
+- index.org (4.4k, 2025-11-26 18:29:07)
+- arena-allocator.org (2.6k, 2025-11-25 22:16:42)
+- data-alignment.org (2.4k, 2025-11-26 02:28:50)
+- index.org (1.2k, 2025-11-26 18:13:26)
+- index.org (1.4k, 2025-11-26 18:13:01)
+- index.org (1.1k, 2025-11-26 18:31:31)
+- but-how-do-it-know-notes.org (1.8k, 2025-11-26 18:37:58)
+- index.org (1.4k, 2025-11-26 18:38:02)
+- operating-systems-three-easy-pieces.org (2.3k, 2025-11-26 18:38:00)
+- mdpr.org (2.2k, 2025-11-25 22:18:41)
+- pong-mania.org (2.6k, 2025-11-25 00:49:33)
+- setting-up-org-mode-pdf-export-on-arch-linux.org (14k, 2025-11-26 15:10:50)
+ ================================================================================
+ [LOGS START]
+ [2025-11-26 19:09:38] [INFO] Starting site content export...
+[2025-11-26 19:09:38] [INFO] Processing hash-table.org...
+[2025-11-26 19:09:38] [INFO] Created directory: /home/angel/xynapz/angeld.me/src/content/writings/cpp/ds/
+[2025-11-26 19:09:38] [INFO] Successfully exported hash-table.org
+[2025-11-26 19:09:38] [INFO] Processing index.org...
+[2025-11-26 19:09:38] [INFO] Successfully exported index.org
+[2025-11-26 19:09:38] [INFO] Processing index.org...
+[2025-11-26 19:09:38] [INFO] Successfully exported index.org
+[2025-11-26 19:09:38] [INFO] Processing index.org...
+[2025-11-26 19:09:38] [INFO] Created directory: /home/angel/xynapz/angeld.me/src/content/writings/linux/
+[2025-11-26 19:09:38] [INFO] Successfully exported index.org
+[2025-11-26 19:09:38] [INFO] Processing arena-allocator.org...
+[2025-11-26 19:09:38] [INFO] Created directory: /home/angel/xynapz/angeld.me/src/content/writings/c/memory/
+[2025-11-26 19:09:38] [INFO] Successfully exported arena-allocator.org
+[2025-11-26 19:09:38] [INFO] Processing data-alignment.org...
+[2025-11-26 19:09:38] [INFO] Successfully exported data-alignment.org
+[2025-11-26 19:09:38] [INFO] Processing index.org...
+[2025-11-26 19:09:38] [INFO] Successfully exported index.org
+[2025-11-26 19:09:38] [INFO] Processing index.org...
+[2025-11-26 19:09:38] [INFO] Successfully exported index.org
+[2025-11-26 19:09:38] [INFO] Processing index.org...
+[2025-11-26 19:09:39] [INFO] Created directory: /home/angel/xynapz/angeld.me/src/content/writings/systems/linux-kernel/
+[2025-11-26 19:09:39] [INFO] Successfully exported index.org
+[2025-11-26 19:09:39] [INFO] Processing but-how-do-it-know-notes.org...
+[2025-11-26 19:09:39] [INFO] Successfully exported but-how-do-it-know-notes.org
+[2025-11-26 19:09:39] [INFO] Processing index.org...
+[2025-11-26 19:09:39] [INFO] Successfully exported index.org
+[2025-11-26 19:09:39] [INFO] Processing operating-systems-three-easy-pieces.org...
+[2025-11-26 19:09:39] [INFO] Successfully exported operating-systems-three-easy-pieces.org
+[2025-11-26 19:09:39] [INFO] Processing mdpr.org...
+[2025-11-26 19:09:39] [INFO] Successfully exported mdpr.org
+[2025-11-26 19:09:39] [INFO] Processing pong-mania.org...
+[2025-11-26 19:09:39] [INFO] Successfully exported pong-mania.org
+[2025-11-26 19:09:39] [INFO] Processing setting-up-org-mode-pdf-export-on-arch-linux.org...
+[2025-11-26 19:09:39] [INFO] Successfully exported setting-up-org-mode-pdf-export-on-arch-linux.org
+[2025-11-26 19:09:39] [INFO] Starting Clean Build (removing orphans)...
+[2025-11-26 19:09:39] [INFO] Clean Build complete. Orphans removed: 0
+[2025-11-26 19:09:39] [INFO] Export complete. Success: 15, Failed: 0
