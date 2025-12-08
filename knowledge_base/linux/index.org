@@ -12,11 +12,13 @@
 * The Repository
 Welcome to my collection of Linux documentation. This section of the site serves as a digital garden for my explorations into open-source operating systems. Here you will find deep dives into the art of shell scripting, system administration, and reproducible environments. For low-level internals, see the [[../systems/index.org][Systems]] section.
 
-* Series
-/Series of Wiki Like Knowledge base/
+* Documentations and Articles.
+/My documentation, logs, articles, posts, resources on user-space linux./
+** [[./bash-mastery-documentation-and-logs.org][Bash Mastery Documentation & Logs]]
+/This documentation is a long running glob of text, that I update whenever I learn something interesting or new thing that I was unaware about bash, in my ever going journey of mastering bash./
 ** [[./chaos-to-config.org][Chaos to Config : Mastering Bash to Tame Arch]]
 /To demystify the Linux boot process and userspace environment by building it from scratch, programmatically is the goal of this learning journey of mine. These posts moves beyond "copy-pasting commands" into the shell, to understanding the *why* behind the *what*, culminating in a custom bash script that turns a fresh Arch ISO into a fully configured Hyprland workstation from my dotfiles./
-* Standalone Articles
+* Setup and Debugging.
 /Independent explorations and technical notes./
 ** [[./setting-up-org-mode-pdf-export-on-arch-linux.org][Configuring Emacs Org mode for LaTeX and PDF export on Arch Linux]]
 /A detailed walkthrough of configuring Emacs Org mode for LaTeX and PDF export on Arch Linux, including all the debugging steps, package installations, and configuration changes needed to make it work./
