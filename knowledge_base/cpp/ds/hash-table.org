@@ -9,19 +9,14 @@
 #+EXPORT_FILE_NAME: /home/angel/xynapz/angeld.me/src/content/writings/cpp/ds/hash-table.html
 
 * Hashtable implementation using seperate chaining.
-Hash tables are everywhere, but I realized I've been taking them for granted.
-Instead of just relying on the standard library, I wanted to get my hands
-dirty and build one myself to see what actually makes them speed efficient.
-I'm going with separate chaining here, mostly because it feels like a solid,
-manageable way to handle collisions without getting too bogged down in open
-addressing complexities right off the bat.
+Hash tables are everywhere, but I realized I've been taking them for granted. Instead of just relying on the standard library, I wanted to get my hands dirty and build one myself to see what actually makes them speed efficient. I'm going with separate chaining here, mostly because it feels like a solid, manageable way to handle collisions without getting too bogged down in open addressing complexities right off the bat.
 
 ** Current Goal
 - Implement a working hashtable.
 - Roughly implement 80% of std::unordered_map
-  [[file:~/xynapz/pub_img/cpp/ds/hash_table.png]]
 
 ** Hashtable layout
+[[file:~/xynapz/pub_img/cpp/ds/hash_table.png]]
 *** Node
 The *Node* data structure will hold the key, value and link to the next node.
 #+begin_src cpp
@@ -44,7 +39,6 @@ size_t capacity_[kInitialHashCapacity];
 #+begin_src cpp
 size_t size_;
 #+end_src
-
 *** table_
 - The table is of type pointer to a pointer to a *Node*.
 #+begin_src cpp
@@ -54,15 +48,17 @@ Node** table_;
 - In case of collision, a nodes are chained in each array index.
 
 *** Functionality
- - Find or Insert using overload *subscript* operator *[]*
-    #+begin_src cpp
-    phone_dir["Angel"] = "000-000-0000";
-    std::string result = phone_dir["Angel"];
-    #+end_src
- - Initially using just a Remove function but I am planning to implement a iterator style removal.
-    #+begin_src cpp
-    phone_dir.Remove("Angel");
-    #+end_src
+
+- Find or Insert using overload *subscript* operator *[]*
+#+begin_src cpp
+phone_dir["Angel"] = "000-000-0000";
+std::string result = phone_dir["Angel"];
+#+end_src
+
+- Initially using just a Remove function but I am planning to implement a iterator style removal.
+#+begin_src cpp
+phone_dir.Remove("Angel");
+#+end_src
 *** Resize Strategy
 I am starting with an initial capacity and when the limit is hit, capacity is doubled, all the items are rehashed and moved to the new table.
 *** Allocation and Deallocation Strategy
@@ -71,8 +67,6 @@ I am starting with an initial capacity and when the limit is hit, capacity is do
 *Deallocation*: The memory for the hashtable will be deallocated by iterating through the table and going through each node in a bucket and delete every node, and delete the table itself.
 *** Hash Function
 - A simple prime multiplication with mod division based hash function.
-
-
 ** LinkedList layout.
 - Head Node that points to start of linked list.
 - Size to store the number of items in the linked list.

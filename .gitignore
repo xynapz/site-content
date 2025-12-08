@@ -43,3 +43,4 @@
 #emacs build directory
 build-el/
 auto/
+.build/

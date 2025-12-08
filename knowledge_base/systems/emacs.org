@@ -1,0 +1,46 @@
+#+TITLE: Emacs
+#+AUTHOR: Angel Dhakal
+#+DATE: 2025-12-06
+#+DESCRIPTION: Emacs Documentations, Keybindings, Cheatsheet.
+#+KEYWORDS: emacs, elisp, keybindings, system, text-editor
+#+OPTIONS: ^:{} num:nil toc:5 html-postamble:nil
+#+HTML_HEAD: <meta name="pub_date" content="2025-12-06" />
+#+HTML_HEAD: <meta name="updated_date" content="2025-12-06" />
+#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld.me/src/content/writings/systems/emacs.html
+
+* Functions I Use All The Time
+** shell-command-on-region =[M-|]=
+** async-shell-command =[M-S &]=
+
+* Emacs Keybindings
+
+** Basic Movements
+| *Function*                        | *Key*   |
+| *Next Line*                       | *C-n*     |
+| *Prev Line*                       | *C-p*     |
+| *Next Char*                       | *C-f*     |
+| *Prev Char*                       | *C-b*     |
+| *Next Word*                       | *M-f*     |
+| *Prev Word*                       | *M-b*     |
+| *Beginning of Line*               | *C-a*     |
+| *End of Line*                     | *C-e*     |
+| *Beginning of Sentence*           | *M-a*     |
+| *End of Sentence*                 | *M-e*     |
+| *Go Back Paragraph*               | *C-UP*    |
+| *Go Ahead Paragraph*              | *C-DOWN*  |
+| *Start of Buffer*                 | *M-<*     |
+| *End of Buffer*                   | *M->*     |
+| *Next Matching Pair/S-Expression* | *C-M-f*   |
+| *Prev Matching Pair/S-Expression* | *C-M-b*   |
+| *Next Error*                      | *M-g M-n* |
+| *Prev Error*                      | *M-g M-p* |
+| *Go To Start of Function*         | *C-M-a*   |
+| *Go To End of Function*           | *C-M-b*   |
+| *Go To Line Number Interactively* | *M-g g*   |
+| *Go To Line Number*               | *M-g M-g* |
+
+
+** Registers/Bookmarks
+
+** Marks
+
