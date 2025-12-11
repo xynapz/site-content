@@ -260,7 +260,40 @@ Here, the dot(*.*) between c, t, is a regular-expression metacharacter (a charac
 ** The GNU awk programming language
 /coming soon/
 ** Conditional Statements
-/coming soon/
+The conditional statements provides a mechanism for executing commands based on some condition, just like in other general programming languages, they follow the same structure, *if / else if / else* blocks to acheive conditional execution of instructions. Bash also has case statements, similar to switch statements in other general purpose programming languages. Lets quickly look at each of them. There's a lot of examples and problems at the end of this post to put into practice.
+
+*** if-elif-else
+They are our standard building blocks for conditional exection, the syntax for them is a little different from languages like c/c++, but still they are as much intuitive.
+
+#+begin_src bash
+if [[ $age -gt 18 ]]; then
+    echo "Adult"
+elif [[ $age -eq 18 ]]; then
+    echo "New Adult"
+else
+    echo "Minor"
+fi
+#+end_src
+
+Conditional expression we used here is very simple, but in bash, there a different ways to compare strings, numbers, files, dirs, commands, etc. Lets look at them.
+
+**** Strings and Number Comparison
+**String Comparison**
+| *Operator* | *Description* |
+| ==       | Equals      |
+| !=       | Not-Equals  |
+| -z       | Empty       |
+| -n       | Not-Empty   |
+
+**Number Comparison**
+| *Operator* | *Description*  |
+| -eq      | Equals       |
+| -ne      | Not-Equals   |
+| -gt      | Greater-Than |
+| -lt      | Less-Than    |
+
+**** Primary Expressions
+
 ** Looping and Repetition
 /coming soon/
 ** Functions
