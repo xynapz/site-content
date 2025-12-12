@@ -11,29 +11,29 @@
 * Bash Mastery Documentation & Logs
 I am writing this post from arch post installation environment, where I dont have any desktop environment setup, I am documenting this process of writing a bash script to automate my post-install steps of my arch-linux system.
 
-** About Bash
+* About Bash
 Bash is a scripting language or a command interpreter developed for unix-like systems like linux. It was created by Brian Fox in 1989, and named It *Bash (Bourne Again Shell)* indicating its a born anew shell scripting language that was meant to replace its predecessor, Bourne Shell AKA *sh*.
 
-** My History and Usecases
+* My History and Usecases
 I knew of the concept of automating batch of repetitive tasks using scripting in linux environments from way back from my college days, where I would often distro-hop, try new tools, naively participate in linux community formus in sites like reddits, arch-wiki, ubuntu-stackexchage, etc. I know a very basic level of scripting right now as well, but I would not say that I am a master at it to solve any freakin problem with scripting. But I have used linux for almost 7 years, 8 in May 2026, and just knowing the basics in 7 years is shameful, This post will first, test my skill boundary in bash and rework on it and learn new things my writing a script to setup the post-arch installation, desktop environment for myself, using my already existing [[https://github.com/xynapz/dotfiles][dotfiles repository]] in github.
 
-** Bash Invocation & Startup
+* Bash Invocation & Startup
 
 Invocation is just another name for how bash starts up, think of it like how a computer system start (normal mode, safe mode, recovery mode), bash also does a similar thing to boot itself up, during when a user login to system or starts a shell in already authenticated environment. This is the invocation of bash.
 
 Startup files are the initial script files that the bash executes when it starts.
 
-*** Two methods of invocation
-**** Interactive & Non-Interactive Invocations
+** Two methods of invocation
+*** Interactive & Non-Interactive Invocations
 *Interactive*: This is the way which most users of linux are very familiar way of running some bash commands. When you open a terminal, it waits for you to type a command in, after a symbol, mostly after *$* symbol, it then executes the command and returns the output to the terminal. This method of invocation handles history of commands, and the process/job/task itself.
 
 *Non-Interactive*: A non-interact invocation is the method of bash invocation in which, a script file is run instead of a command. All scripts use non-interactive shell for invocation and they cannot do any other task in between execution of that script.
-**** Login & Non-Login Interactive Invocation
+*** Login & Non-Login Interactive Invocation
 *Login Shell*: This is the shell, a user gets access to after authenticating with their username and password during the session start. This is the stage where bash sets up the entire environment, including PATH and other environment variables.
 
 *Non-Login Shell*: After you are logged in to your desktop, you open a new terminal, or open a new tab inside of an already opened terminal, or when typing bash inside of an existing shell, the shell that starts is the non-login shell.
 
-*** Scenario 1: Invocation with Interactive Login Shell.
+** Scenario 1: Invocation with Interactive Login Shell.
 When we first login to a system, the bash shell reads some startup scripts in order, they are as follows:
 1. */etc/profile* which contains system-wide environment variables and configurations.
 2. Then it looks for one of these files in order:
@@ -45,21 +45,24 @@ When we first login to a system, the bash shell reads some startup scripts in or
 *Now a question arised in my mind*
 *how about the .bashrc file?*
 Well it seems *.bashrc* file is not read by the login shell. This file is read by the non-login shells, explained below in [[*Scenario 2: Invocation with Interactive Non-Login Shell.][Scenario 2]].
-*** Scenario 2: Invocation with Interactive Non-Login Shell.
+** Scenario 2: Invocation with Interactive Non-Login Shell.
 When we open a terminal by clicking on the terminal icon from our desktop, the shell that opens is a interactive non-login shell. Or, if we open a new tab in already opened terminal, or.These are few examples of interactive non-login shell.
 The files the bash shell reads when entering the interactive non-login shell is, intense music, more-intensified music, yes, its *~/.bashrc*
-*** Scenario 3: Invoking in Non-Interactive Shell.
+** Scenario 3: Invoking in Non-Interactive Shell.
 All script files that run are in a non-interactive shell. In this scenario, the script is run in a clean slate, to make sure that the script runs predictably.
-*** Scenario 4: Invocation with the sh command.
+** Scenario 4: Invocation with the sh command.
 If you create a symbolic link of bash and name it as sh, and run a script using thew new named sh link, it runs as a POSIX standard *sh* shelll instead. In that case it will read these files in order:
 1. /etc/profile
 2. ~/.bash_profile
-*** Scenario 5: Invocation in POSIX Mode.
-In this mode, bash is forced to adhere to the POSIX standard to execute the scripts. We can enable posix mode by running *set -o posix* or running bash with *--posix* option, will also force the standard, the last approach is, by setting the environment variable *POSIXLY_CORRECT*, which also forces the POSIX standard for the script we are trying to run. The advantage of this is that our script will be able to run in most system that adhere to strict POSIX standard.
-*** Scenatio 6: Invoked Remotely.
+** Scenario 5: Invocation in POSIX Mode.
+In this mode, bash is forced to adhere to the POSIX standard to execute the scripts. We can enable posix mode by running *set -o posix* or running bash with *--posix* option, will also force the standard, the last approach is, by setting the environment variable *POSIXLY_CORRECT*, which also forces the POSIX standard for the script we are trying to run. The advantage of this is that our script will be able to run in most system that adhere to strict POSIX standards.
+** Scenatio 6: Invoked Remotely.
 When we invoke a script in a remote shell, the file read by the remote shell is the *~/.bashrc* file.
 
-** Logging
+Read More about Invocation and Startup at [[https://tldp.org/LDP/Bash-Beginners-Guide/html/Bash-Beginners-Guide.html#sect_01_02_02][TLDP 1.2.2 Features only found in bash]].
+* Exit and Exit Status
+
+* Logging
 While writing a shell script, in my opinion, it is very important to see real-time log of what commands are executing?, what procedure are being executed?, what issue has arrised? these details are very crucial for observing, analysing and debugging the script in case if the script fails or crashes. Using colorful text appropriately is a best practice that will make it easier to read info from a black screen.
 
 To log data from a script to a standard output like a terminal screen, we can just do echo to print stuff on the screen.
@@ -67,69 +70,70 @@ To log data from a script to a standard output like a terminal screen, we can ju
   echo "Message to log to the screen."
 #+end_src
 
-#+RESULTS:
-: Message to log to the screen.
+#+begin_example
+Message to log to the screen.
+#+end_example
 
-** Immediate Termination Upon Error
+* Immediate Termination Upon Error
 In most cases, when we are using a script to automate a task, we want the script to terminate its execution immediately if there is any sort of issue, bug, or any kind of bad signal received. The reason for this immediate exit on error is, a script is a series of instruction, that have to executed in order, and there is point in executing the next instruction if an error has occured while executing the current instruction.
 
-** Variables
-As any other programming language, a bash is just a named identifier for a data object. There are two types of variables
-in bash, *global* variables and *local* variables.
+* Variables
+As any other programming language, a bash is just a named identifier for a data object. There are two types of variables in bash, *global* variables and *local* variables.
 
-*** Global Variable
+** Global Variable
 A global variable is a variable that is available in all the shells in a system. It is also called environment variables. They are named *ALL_CAPS* to denote they are global or environment variables. They can be set in shell configuration files which makes it available to all available shells. In a shell, we can view all global variables using *env* or *printenv* commands.
 
 #+begin_src bash
   env
 #+end_src
 
-#+RESULTS:
-| SHELL=/usr/bin/zsh                                                                                   |
-| HYPRLAND_CMD=Hyprland                                                                                 |
-| XDG_SESSION_PATH=/org/freedesktop/DisplayManager/Session1                                              |
-| XDG_BACKEND=wayland                                                                                   |
-| DESKTOP_SESSION=hyprland                                                                              |
-| XDG_SEAT=seat0                                                                                        |
-| PWD=/home/angel/dotfiles/scripts/setup                                                               |
-| XDG_SESSION_DESKTOP=Hyprland                                                                           |
-| LOGNAME=angel                                                                                        |
-| XDG_SESSION_TYPE=wayland                                                                               |
-| _=/usr/bin/env                                                                                       |
-| MOTD_SHOWN=pam                                                                                        |
-| HOME=/home/angel                                                                                     |
-| LANG=en_US.UTF-8                                                                                      |
+#+begin_example
+| SHELL=/usr/bin/zsh                                                                                      |
+| HYPRLAND_CMD=Hyprland                                                                                   |
+| XDG_SESSION_PATH=/org/freedesktop/DisplayManager/Session1                                               |
+| XDG_BACKEND=wayland                                                                                     |
+| DESKTOP_SESSION=hyprland                                                                                |
+| XDG_SEAT=seat0                                                                                          |
+| PWD=/home/angel/xynapz/site-content/knowledge_base/linux                                                |
+| XDG_SESSION_DESKTOP=Hyprland                                                                            |
+| LOGNAME=angel                                                                                           |
+| XDG_SESSION_TYPE=wayland                                                                                |
+| _=/usr/bin/env                                                                                          |
+| MOTD_SHOWN=pam                                                                                          |
+| HOME=/home/angel                                                                                        |
+| LANG=en_US.UTF-8                                                                                        |
 | _JAVA_AWT_WM_NONREPARENTING=1                                                                           |
-| XDG_CURRENT_DESKTOP=Hyprland                                                                           |
-| WAYLAND_DISPLAY=wayland-1                                                                             |
-| XDG_SEAT_PATH=/org/freedesktop/DisplayManager/Seat0                                                    |
-| XDG_SESSION_CLASS=user                                                                                 |
-| TERM=dumb                                                                                            |
-| USER=angel                                                                                           |
-| HYPRLAND_INSTANCE_SIGNATURE=386376400119dd46a767c9f8c8791fd22c7b6e61_1765136001_108445813                |
-| DISPLAY=:1                                                                                           |
-| SHLVL=1                                                                                              |
-| MOZ_ENABLE_WAYLAND=1                                                                                   |
-| XDG_VTNR=1                                                                                            |
-| XDG_SESSION_ID=2                                                                                       |
-| XDG_RUNTIME_DIR=/run/user/1000                                                                         |
-| DEBUGINFOD_URLS=https://debuginfod.archlinux.org                                                      |
+| XDG_CURRENT_DESKTOP=Hyprland                                                                            |
+| WAYLAND_DISPLAY=wayland-1                                                                               |
+| XDG_SEAT_PATH=/org/freedesktop/DisplayManager/Seat0                                                     |
+| XDG_SESSION_CLASS=user                                                                                  |
+| TERM=dumb                                                                                               |
+| USER=angel                                                                                              |
+| HYPRLAND_INSTANCE_SIGNATURE=386376400119dd46a767c9f8c8791fd22c7b6e61_1765440446_1500978115              |
+| DISPLAY=:1                                                                                              |
+| SHLVL=1                                                                                                 |
+| MOZ_ENABLE_WAYLAND=1                                                                                    |
+| XDG_VTNR=1                                                                                              |
+| XDG_SESSION_ID=2                                                                                        |
+| XDG_RUNTIME_DIR=/run/user/1000                                                                          |
+| DEBUGINFOD_URLS=https://debuginfod.archlinux.org                                                        |
 | PATH=/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl |
 | DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus                                                   |
-| MAIL=/var/spool/mail/angel                                                                           |
-| OLDPWD=/home/angel                                                                                   |
+| MAIL=/var/spool/mail/angel                                                                              |
+| OLDPWD=/home/angel                                                                                      |
+#+end_example
 
-*** Local Variables
+** Local Variables
 Local Variables are variables that are available in the current shell only. In some conventions local variables are all capitalized and in some conventions they are not. So its up to the user to follow a style for naming their own local variables, but being consistent here is the key.
 
-*** Types of Variables
+** Types of Variables
 The variables in bash has four main types, they are:
 - Integer Variables
 - String Variables
 - Constant Variables
 - Array Variables
 
-*** Creating Variables
+** Creating Variables
 Variables in bash are case-sensitive, naming a variable is simple in bash, you can give any name, but giving a variable a name that starts with a digit is an error.
 
 #+begin_src bash
@@ -137,11 +141,12 @@ Variables in bash are case-sensitive, naming a variable is simple in bash, you c
   echo "$1name"
 #+end_src
 
-#+RESULTS:
-: name
-: bash: line 1: 1name=Angel: command not found
+#+begin_example
+name
+bash: line 1: 1name=Angel: command not found
+#+end_example
 
-**** Space around equals (=) sign
+*** Space around equals (=) sign
 Giving a space around equal sign will result in an error. Examples
 
 #+begin_src bash
@@ -149,20 +154,21 @@ Giving a space around equal sign will result in an error. Examples
   echo "$name"
 #+end_src
 
-#+RESULTS:
+#+begin_example
 : bash: line 1: name: command not found
+#+end_example
 
 #+begin_src bash
   name="Angel"
   echo "$name"
 #+end_src
 
-#+RESULTS:
-: Angel
-
+#+begin_example
+Angel
+#+end_example
 Above in the the first example, if you look closely, there is space around *=* while assigning *Angel* to name, this is not allowed while creating a variable in bash, the second code block which doesn't have any leading or trailing space around *=* sign, is valid syntax to create a variable in bash.
 
-**** Exporting a Variable
+*** Exporting a Variable
 A variable that we create is only available in that shell, if we want a variable to exists for all of its child-shell also called subshells, child-process, etc. then we can export a variable using the *export* keyword, what that does, is, it basically exports that variables for all of its child-process to access it, even modify it, but the modified variables only exists within that child-shell or its children shells, but not in the parent shell, it still has its original reference.
 
 #+begin_src bash
@@ -171,15 +177,16 @@ A variable that we create is only available in that shell, if we want a variable
 
 In above example, the name variable will be available to the child shell that this command is run on.
 
-*** Reserved Keywords
+** Array Variables
+
+** Reserved Keywords
 Since bash is a extension of sh, all the reserved keywords of sh are also reserved in bash, plus there are a few more reserved keywords that bash has, so naming our variables, that is not a reserved keyword is a compulsory. Some examples are, *HOME*, *PATH*, *PS1*, *SHELL*, etc.
 
-** Quoting, Expansion and Aliases
-*** Quoting Characters
-In bash a lot of characters have special meaning to them, syntactly and logically. Quoting is a mechanism of removing
-those sepcial meaning of those characters and lay them as plain ASCII characters.
+* Quoting, Expansion and Aliases
+** Quoting Characters
+In bash a lot of characters have special meaning to them, syntactly and logically. Quoting is a mechanism of removing those sepcial meaning of those characters and lay them as plain ASCII characters.
 
-**** Escape Character
+*** Escape Character
 Escape character is used to remove the special meaning from a single character. To acheive this a non-quoted backslash, *\*, is used as the escape character in bash.
 
 #+begin_src bash
@@ -191,11 +198,11 @@ Escape character is used to remove the special meaning from a single character. 
   echo "\$name"
 #+end_src
 
-#+RESULTS:
-| Angel |
-| $name |
-
-**** Single Quotes
+#+begin_example
+Angel
+$name
+#+end_example
+*** Single Quotes
 Everything withing the single quotes is taken literally, this is also called strong quoting. Every special characters inside the single quote loses its meaning these include *$*, *\*, *\"* etc. A single quote character *'* also cannot be inside single quotes.
 
 One example:
@@ -203,19 +210,22 @@ One example:
   echo '$date'
 #+end_src
 
-#+RESULTS:
+#+begin_example
 : $date
+#+end_example
 
-**** Double Quotes
-Double quoting a variable or text is known as weak quoting. It quotes the literal value of all characters except, backslash *\*, dollar sign *$* and backticks *``*.
+*** Double Quotes
+Double quoting a variable or text is known as weak quoting. It quotes the literal value of all characters except, backslash *\*, dollar sign *$* and backticks.
 
 #+begin_src bash
   echo "Angel'$\"\\"
 #+end_src
 
-#+RESULTS:
+#+begin_example
+Angel'$"\
+#+end_example
 
-*** Shell Expansion
+** Shell Expansion
 When bash executes a script, it splits the commands into tokens (operands, operators, etc), some of these tokens might not be resolved, one famous example is *~* symbol, it doesnt have any meaning in the linux-kernel, its the bash shell that resolves *~* to */home/uname/* everywhere it encounters the symbol. And there are eight types of symbol exansion in bash.
 
 - **Brace Expansion**
@@ -230,12 +240,12 @@ When bash executes a script, it splits the commands into tokens (operands, opera
 
 You can get more information about them at [[https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_03_04.html][TLDP-Bash-Beginners-Guide]].
 
-** Regular Expressions
+* Regular Expressions
 Regular Expression pvovides a language for performing pattern matching, data extraction and heavy text processing. They are not just in bash but everywhere in computer science, where text manipulation and processing involves like, text editors, find-and-replace, a lot of technologies use regular expressions to find a pattern of text in a large pool of text object.
 
 In bash utilities like sed, grep, etc use regular expression for processing text. SO understanding them is a must if my goal is to master bash.
 
-*** Mechnish and Syntax
+** Mechnish and Syntax
 In bash, the use of *=[[]]=*  double bracket is used whenever we want to do some pattern matching using regex (regular-expression), alongside the *=~* operator, the reason for double brackets unlike single braces is because double brackets directly performs the operation by treating the contents inside of brackets as pure regex and not performing any kind of [[*Shell Expansion][Shell Expansion]], that would be an invalid regex syntax.
 
 #+begin_src bash
@@ -248,21 +258,19 @@ else
 fi
 #+end_src
 
-#+RESULTS:
-: Hello
-
+#+begin_example
+Hello
+#+end_example
 Here, the dot(*.*) between c, t, is a regular-expression metacharacter (a character that has a special meaning in regex) that means match any single character. Some other metacharacters are given below on a table.
 
-
-
-** The GNU sed stream editor
+* The GNU sed stream editor
 /coming soon/
-** The GNU awk programming language
+* The GNU awk programming language
 /coming soon/
-** Conditional Statements
-The conditional statements provides a mechanism for executing commands based on some condition, just like in other general programming languages, they follow the same structure, *if / else if / else* blocks to acheive conditional execution of instructions. Bash also has case statements, similar to switch statements in other general purpose programming languages. Lets quickly look at each of them. There's a lot of examples and problems at the end of this post to put into practice.
+* Conditional Statements
+The conditional statements provides a mechanism for executing commands based on some condition, just like in other general programming languages, they follow the same structure, *if / elif / else* blocks to acheive conditional execution of instructions. Bash also has case statements, similar to switch statements in other general purpose programming languages. Lets quickly look at each of them. There's a lot of examples and problems at the end of this post to put into practice.
 
-*** if-elif-else
+** if-elif-else
 They are our standard building blocks for conditional exection, the syntax for them is a little different from languages like c/c++, but still they are as much intuitive.
 
 #+begin_src bash
@@ -277,7 +285,7 @@ fi
 
 Conditional expression we used here is very simple, but in bash, there a different ways to compare strings, numbers, files, dirs, commands, etc. Lets look at them.
 
-**** Strings and Number Comparison
+*** Strings and Number Comparison
 **String Comparison**
 | *Operator* | *Description* |
 | ==       | Equals      |
@@ -291,12 +299,198 @@ Conditional expression we used here is very simple, but in bash, there a differe
 | -ne      | Not-Equals   |
 | -gt      | Greater-Than |
 | -lt      | Less-Than    |
+|----------+--------------|
 
-**** Primary Expressions
+*** Primary Expressions
+There are some common conditional expressions used in if statements, The [[https://tldp.org/LDP/Bash-Beginners-Guide/html/Bash-Beginners-Guide.html#sect_07_01_01_01][TLDP Section 7.1.1.1 Expression used with if]] has a list of these "primaries" that make up the conditional expressions. In TLDP docs, the primaries mentioned are /conditional-expressions/ or /test-command/ that is checked inside of =[...]= or =[[...]]= in a if statements. Below in the table, I have mentioned the ones I use frequently, and the ones I find interesting and the ones that are ambigious and need a clarification for me.
 
-** Looping and Repetition
-/coming soon/
-** Functions
+| *Expression*                  | *Functionality*                                                     |
+| =[ -a FILE ]=                 | True if /FILE/ exists.                                              |
+| =[ -d FILE ]=                 | True if /FILE/ is a directory.                                      |
+| =[ -e FILE ]=                 | True if /FILE/ exists (file, dir, device, symlink).                 |
+| =[ -f FILE ]=                 | True if regular /FILE/ exists.                                      |
+| =[ -h FILE ]=                 | True if a symlink /FILE/ exists. (*/GNU/Unix/*)                       |
+| =[ -L FILE ]=                 | True if /FILE/ exists and is symlink. (*/POSIX/*) (*/USE THIS/*)        |
+| =[ -r FILE ]=                 | True if /FILE/ exists and is readable.                              |
+| =[ -w FILE ]=                 | True if /FILE/ exists and is writable.                              |
+| =[ -x FILE ]=                 | True if /FILE/ exists and is executable.                            |
+| =[ -s FILE ]=                 | True if /FILE/ exists and size is greater than 0.                   |
+| =[ -N FILE ]=                 | True if /FILE/ exists and has been modified since it was last read. |
+| =[ -S FILE ]=                 | True if /FILE/ exists and is a socket.                              |
+| =[ -O FILE ]=                 | True if /FILE/ exists and is owned by effective user ID.            |
+| =[ -G FILE ]=                 | True if /FILE/ exists and is owned by effective group ID.           |
+| =[ FILE1 -nt FILE2 ]=         | True if /FILE1/ is newer than or modified recently than /FILE2/.      |
+| =[ FILE1 -ot FILE2 ]=         | True if /FILE1/ is older than /FILE2/.                                |
+| =[ -z String ]=               | True if /length/ of *String* is 0.                                    |
+| =[ -n String ]= or =[ String ]= | True if /length/ of *String* is non-zero.                             |
+| ~[ String1==String2 ]~        | True if the /Strings/ are equal.                                    |
+| ~[ String1!=String2 ]~        | True if the /Strings/ are not-equal.                                |
+
+*** Primary Expression with Arithmetic Binary Operators
+| *Expression*        | *Functionality*       |
+| ~[ ARG1 -eq ARG2 ]~ | Equals              |
+| ~[ ARG1 -ne ARG2 ]~ | Not-Equals          |
+| ~[ ARG1 -lt ARG2 ]~ | Less-Than           |
+| ~[ ARG1 -le ARG2 ]~ | Less-Than-Equals    |
+| ~[ ARG1 -gt ARG2 ]~ | Greater-Than        |
+| ~[ ARG2 -ge ARG2 ]~ | Greater-Than-Equals |
+These arithmetic binary operators works only if *ARG1* and *ARG2* both are integers. If I have to do, an arithmetic operation in bash, I have to make sure that the variables, here, ARG1 and ARG2 are unquoted, example, they cannot be "$ARG1" + "$ARG2", within the quoted string, they must not contain those quoted strings.
+
+*** Chaining Expressions With Logic
+We can chain multiple conditional operators, using some logical operatos like not, and, or, to chain two or more than two expressions.
+| *Operation*          | *Functionality*                                      |
+| ~[ !EXPR ]~          | True if expresion is false, boolean not operation. |
+| ~[ EXPR1 -a EXPR2 ]~ | True if both expression are true, otherwise false. |
+| ~[ EXPR1 -o EXPR2 ]~ | True if either expressions are true.               |
+
+*** Trying the primaries
+We can use the variable *$?* which holds the status code of last executed command, to view the result of out conditional expressions.
+#+begin_src bash
+[ 1 -eq 1 ]; echo $?
+[ "angel" == "angl" ]; echo $?
+[ 2 -gt 1 -a 1 -eq 1 ]; echo $? # eo: 0(true)
+[ -z "" ]; echo $?
+[ -z "a" ]; echo $?
+[ -n "" ]; echo $?
+[ -n "a" ]; echo $?
+[ -f "./index.org" ]; echo $? #the file exists
+[ -d "../linux" ]; echo $? #the file is a dir
+[ -L "./bash-mastery-documentation-and-logs.org" ]; echo $? # the file exists but is not a symlink (-h too)
+#+end_src
+As, we know, the result of a conditional expression, is not a boolean value but a exit status code, where *0* is true and a *non-zero* numberic is false. We can see the output of above commands down below.
+#+begin_example
+| 0 |
+| 1 |
+| 0 |
+| 0 |
+| 1 |
+| 1 |
+| 0 |
+| 0 |
+| 0 |
+| 1 |
+#+end_example
+
+** CASE Statements
+Well, sometimes we have to write nested if statements to acheive some state, and if its too deep, than it might not be readable, so for more complex conditionals, case statements can be very useful.
+
+#+begin_src bash
+animal="dog"
+case "$animal" in
+     cat)
+         echo "cat"
+         ;;
+     dog)
+         echo "dog"
+         ;;
+     *)
+         echo "unknown animal"
+         ;;
+esac
+#+end_src
+
+#+begin_example
+dog
+#+end_example
+More about bash case statement at [[https://tldp.org/LDP/Bash-Beginners-Guide/html/Bash-Beginners-Guide.html#sect_07_03][TLDP - Using case Statements]]. They have docs on case statement on more detail.
+* Looping and Repetition
+Loop in bash is acheived through three main keyword, for, while, until. I have familiarity with loops in other languages as well, so they are pretty self explanatory, so, here are the basic syntax and key points to remember for them.
+** For Loop
+The for loop in bash has two flavors, one is list based iteration to iterate over a list of files, strings, numbers, etc, and bash also supports for c-style for loops. Lets look at each of them briefly.
+
+*** List Based Iteration
+In list based iteration we loop over already defined list of items, this method is good for looping over list of files, strings, list of variables, etc. The syntax of list based for loop is below.
+
+#+begin_src bash
+for i in 1 2 3 4 5 6 7 8 9 10
+do
+    echo -n "$i "
+done
+#+end_src
+
+#+begin_example
+1 2 3 4 5 6 7 8 9 10
+#+end_example
+
+The do keyword should be on the next line, if you don't wan't that, you wanna have do on same line then put a semicolon (*;*) after the for statement then write do, then continue on the next line.
+
+*** Using Seq
+#+begin_example
+for i in `seq 10`
+do
+    echo -n "$i "
+done
+#+end_example
+
+#+begin_example
+1 2 3 4 5 6 7 8 9 10
+#+end_example
+
+*** Using Brace Expansion
+
+#+begin_src bash
+for i in {1..10}
+do
+    echo -n "$i "
+done
+#+end_src
+
+#+begin_example
+1 2 3 4 5 6 7 8 9 10
+#+end_example
+
+*** C-Style Iteration
+Bash also hash support for classic c-style for loops, the syntax for them is given below.
+
+#+begin_src bash
+LIM=10
+for ((i=1; i<LIM; i++))
+do
+    echo -n "$i "
+done
+#+end_src
+
+#+begin_example
+1 2 3 4 5 6 7 8 9
+#+end_example
+View some more examples of c-style for loop at the [[https://tldp.org/LDP/abs/html/loops1.html#FORLOOPC][Example: 11.13 C-Style for loop.]]
+
+There are more intuitive examples of list based iteration, c-style for loop and others at the [[https://tldp.org/LDP/abs/html/loops1.html][TLDP's documentations]].
+
+** While Loop
+While loops in bash are similar to other languages, it runs till the given condition is True. Below is the given syntax for while loop.
+
+#+begin_src bash
+OFFSET=1
+LIMIT=10
+while [ $OFFSET -lt $LIMIT ]; do
+    echo -n "$OFFSET "
+    OFFSET=$(($OFFSET+1))
+done
+#+end_src
+
+#+begin_example
+1 2 3 4 5 6 7 8 9
+#+end_example
+
+** Until Loop
+Lastly the loop that is used the least, until loop. The until loop is quite the opposite of the while loop, that is, until loop runs when condition is False, until it becomes True. Lets see the syntax for it.
+
+#+begin_src bash
+counter=1
+until [ $counter -gt 5 ]; do
+    echo -n "$counter "
+    counter=$(($counter+1))
+done
+#+end_src
+
+#+begin_example
+1 2 3 4 5
+#+end_example
+
+More about them at [[https://tldp.org/LDP/abs/html/loops1.html#UNTILLOOPREF][Example: 11.19. until loop]].
+
+* Functions
 In bash, functions exists, like other programming languages, they are used for reusing repetitive piece of logic multiple times without repeating too much. Function usually takes arguments executes some instructions or commands in bash and return back. The syntax for a function is simple, the name of the function followd by a pair of parenthesis, and the function's body enclosed inside a pair of curly braces.
 
 #+begin_src bash
@@ -312,11 +506,12 @@ In bash, functions exists, like other programming languages, they are used for r
   log_file "test.sh"
 #+end_src
 
-#+RESULTS:
-| Static  | Message |
-| test.sh |         |
+#+begin_example
+Static Message
+test.sh
+#+end_example
 
-** Little about signals
+More about functions at [[https://tldp.org/LDP/Bash-Beginners-Guide/html/Bash-Beginners-Guide.html#sect_11_01][TLDP Functions]].
 
 * References
 

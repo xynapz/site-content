@@ -11,7 +11,8 @@
 * Functions I Use All The Time
 ** shell-command-on-region =[M-|]=
 ** async-shell-command =[M-S &]=
-
+** quoted-insert =[C-q]=
+I have set my backtick (*`*) character binding to cslatex-math-symbol, this command reads a character and converts it to math symbol. So, there are often times that I have to write the backtick character, so to do that, in emacs there is a command and a defult binding for it, the binding is =[C-q <char>]=, that is self explanatory, what that binding invokes is the quoted-insert command, which essentially does is that reads the next input character from keyboard and inserts as it is.
 * Emacs Keybindings
 
 ** Basic Movements
