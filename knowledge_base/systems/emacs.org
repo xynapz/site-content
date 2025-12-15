@@ -16,32 +16,51 @@ I have set my backtick (*`*) character binding to cslatex-math-symbol, this comm
 * Emacs Keybindings
 
 ** Basic Movements
-| *Function*                        | *Key*   |
-| *Next Line*                       | *C-n*     |
-| *Prev Line*                       | *C-p*     |
-| *Next Char*                       | *C-f*     |
-| *Prev Char*                       | *C-b*     |
-| *Next Word*                       | *M-f*     |
-| *Prev Word*                       | *M-b*     |
-| *Beginning of Line*               | *C-a*     |
-| *End of Line*                     | *C-e*     |
-| *Beginning of Sentence*           | *M-a*     |
-| *End of Sentence*                 | *M-e*     |
-| *Go Back Paragraph*               | *C-UP*    |
-| *Go Ahead Paragraph*              | *C-DOWN*  |
-| *Start of Buffer*                 | *M-<*     |
-| *End of Buffer*                   | *M->*     |
-| *Next Matching Pair/S-Expression* | *C-M-f*   |
-| *Prev Matching Pair/S-Expression* | *C-M-b*   |
-| *Next Error*                      | *M-g M-n* |
-| *Prev Error*                      | *M-g M-p* |
-| *Go To Start of Function*         | *C-M-a*   |
-| *Go To End of Function*           | *C-M-b*   |
-| *Go To Line Number Interactively* | *M-g g*   |
-| *Go To Line Number*               | *M-g M-g* |
+| *Function*                                      | *Key*                                             |
+| *Next Line*                                     | *C-n*                                             |
+| *Prev Line*                                     | *C-p*                                             |
+| *Next Char*                                     | *C-f*                                             |
+| *Prev Char*                                     | *C-b*                                             |
+| *Next Word*                                     | *M-f*                                             |
+| *Prev Word*                                     | *M-b*                                             |
+| *Beginning of Line*                             | *C-a*                                             |
+| *End of Line*                                   | *C-e*                                             |
+| *Beginning of Sentence*                         | *M-a*                                             |
+| *End of Sentence*                               | *M-e*                                             |
+| *Go Back Paragraph*                             | *C-UP*                                            |
+| *Go Ahead Paragraph*                            | *C-DOWN*                                          |
+| *Start of Buffer*                               | *M-<*                                             |
+| *End of Buffer*                                 | *M->*                                             |
+| *Next Matching Pair/S-Expression*               | *C-M-f*                                           |
+| *Prev Matching Pair/S-Expression*               | *C-M-b*                                           |
+| *Next Error*                                    | *M-g M-n*                                         |
+| *Prev Error*                                    | *M-g M-p*                                         |
+| *Go To Start of Function*                       | *C-M-a*                                           |
+| *Go To End of Function*                         | *C-M-b*                                           |
+| *Go To Line Number Interactively*               | *M-g g*                                           |
+| *Go To Line Number*                             | *M-g M-g*                                         |
+| *Go N(20) Lines Up*                             | *C-u N C-p* OR *M-2 M-0 C-p*                        |
+| *Go N(35) Lines Down*                           | *C-u N C-n* OR *M-3 M-5 C-n*                        |
+| *Go K(20) Characters Forwards*                  | *C-u K C-f* OR *M-2 M-0 C-f*                        |
+| *Go K(35) Characters Backwards*                 | *C-u K C-b* OR *M-3 M-5 C-b*                        |
+| *Jump Next Lines at Intervals (4, 16, 64, 128)* | *C-u C-n* ..... *C-u C-u C-n* ..... *C-u C-u C-u C-n* |
+| *Jump Prev Lines at Intervals (4, 16, 64, 128)* | *C-u C-p* ..... *C-u C-u C-p* ..... *C-u C-u C-u C-p* |
+| *Kill every chars in a line after the cursor*   | *C-k*                                             |
+| *Kill N Lines after the cursor*                 | *C-u N C-k*                                       |
+| *Undo*                                          | *C-/*                                             |
+| *Redo*                                          | *C-S-/*                                           |
+| *Copy Region of text*                           | *M-w*                                             |
+| *Cut Region of text*                            | *C-w*                                             |
+| *Paste last killed text*                        | *C-y*                                             |
+| *Paste from history*                            | *M-y*                                             |
+| *Kill Next Word*                                | *M-d*                                             |
+| *Kill Prev Word*                                | *C-DEL* ..... *M-DEL*                             |
+|                                               |                                               |
 
-
-** Registers/Bookmarks
 
 ** Marks
+Emacs remembers something called the mark, which is a previous cursor position
+** Registers/Bookmarks
+
+
 
