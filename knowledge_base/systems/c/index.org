@@ -8,14 +8,6 @@
 #+HTML_HEAD: <meta name="updated_date" content="2025-11-25" />
 #+EXPORT_FILE_NAME: /home/angel/xynapz/angeld.me/src/content/writings/systems/c/index.html
 
-* Introduction
-C is not just a language; it is the portable assembly of the modern world. Despite the rise of Rust and Zig, C remains the above other for hardware and systems interfaces (ABIs) programming.
-
-To understand C is to understand the machine. It forces you to think about:
-- Stack frames and calling conventions.
-- The virtual memory map.
-- The cost of abstraction.
-
 * Core Modules
 I categorize my C notes into specific domains of complexity, some contents are shared with C++ Notes, appropriate links and footnotes are available as well.
 

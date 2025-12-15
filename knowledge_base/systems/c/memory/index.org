@@ -11,11 +11,5 @@
 
 
 * Introduction
-We often treat memory as an infinite tape provided by ~malloc()~. In reality, the heap is a complex negotiation between the C runtime (libc) and the kernel.
 
-When we request memory, we are usually interacting with a general-purpose allocator (dlmalloc, jemalloc, mimalloc). However, for high-performance systems (like game engines or high-frequency trading), general-purpose allocators are bottlenecks due to:
-
-1. *Lock Contention*: Thread safety overhead.
-2. *Fragmentation*: Holes in the heap causing poor cache locality.
-3. *Header Overhead*: Metadata storage for every allocation.
 

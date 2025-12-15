@@ -13,19 +13,4 @@
 This section explores the heart of the operating system. While the [[../../linux/index.org][User Space]] section covers how to *use* and *configure* Linux, this section covers how Linux *works*.
 
 * Core Subsystems
-/Content coming soon.../
-** Process Management
-- The Scheduler (CFS, EEVDF)
-- Context Switching
 
-** Memory Management
-- Virtual Memory
-- Paging & Slab Allocators
-
-** Filesystems
-- VFS (Virtual File System)
-- Ext4, Btrfs, XFS internals
-
-** Device Drivers
-- Character vs Block Devices
-- Kernel Modules

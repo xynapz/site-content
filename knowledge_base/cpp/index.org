@@ -11,7 +11,7 @@
 
 
 * Welcome
-I'm writing this to keep myself honest as I learn C++ and systems programming. It's a living collection of notes, code, and explanations for how things work when you strip away the abstractions. Expect broken code, strong opinions, and occasional epiphanies.
+I'm writing this to keep myself honest as I learn C++ and systems programming. This is a living collection of notes, code, and explanations for C++ that I have learned and researched over time. Expect broken code, strong opinions, and occasional epiphanies.
 
 * The Knowledge Base
 
