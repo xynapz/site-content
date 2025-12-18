@@ -1,0 +1,116 @@
+#+TITLE: Loops and Iterations.
+#+AUTHOR: Angel Dhakal
+#+DATE: 2025-12-17
+#+DESCRIPTION: Documentation on bash looping and iteration
+#+KEYWORDS: bash, mastery, documentation, technical-docs, loops, for, while, until, linux, linux-docs, shell
+#+OPTIONS: ^:{} num:nil toc:5 html-postamble:nil
+#+HTML_HEAD: <meta name="pub_date" content="2025-12-17" />
+#+HTML_HEAD: <meta name="updated_date" content="2025-12-17" />
+#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld/content/writings/linux/bash/loops.html
+#+ORDER: 14
+
+* Looping and Iterations
+Loop in bash is acheived through three main keyword, for, while, until. I have familiarity with loops in other languages as well, so they are pretty self explanatory, so, here are the basic syntax and key points to remember for them.
+** For Loop
+:PROPERTIES:
+:CUSTOM_ID: for-loops
+:END:
+The for loop in bash has two flavors, one is list based iteration to iterate over a list of files, strings, numbers, etc, and bash also supports for c-style for loops. Lets look at each of them briefly.
+
+*** List Based Iteration
+In list based iteration we loop over already defined list of items, this method is good for looping over list of files, strings, list of variables, etc. The syntax of list based for loop is below.
+
+#+begin_src bash
+for i in 1 2 3 4 5 6 7 8 9 10
+do
+    echo -n "$i "
+done
+#+end_src
+
+#+begin_example
+1 2 3 4 5 6 7 8 9 10
+#+end_example
+
+The do keyword should be on the next line, if you don't wan't that, you wanna have do on same line then put a semicolon (*;*) after the for statement then write do, then continue on the next line.
+
+*** Using Seq
+#+begin_example
+for i in `seq 10`
+do
+    echo -n "$i "
+done
+#+end_example
+
+#+begin_example
+1 2 3 4 5 6 7 8 9 10
+#+end_example
+
+*** Using Brace Expansion
+
+#+begin_src bash
+for i in {1..10}
+do
+    echo -n "$i "
+done
+#+end_src
+
+#+begin_example
+1 2 3 4 5 6 7 8 9 10
+#+end_example
+
+*** C-Style Iteration
+Bash also hash support for classic c-style for loops, the syntax for them is given below.
+
+#+begin_src bash
+LIM=10
+for ((i=1; i<LIM; i++))
+do
+    echo -n "$i "
+done
+#+end_src
+
+#+begin_example
+1 2 3 4 5 6 7 8 9
+#+end_example
+View some more examples of c-style for loop at the [[https://tldp.org/LDP/abs/html/loops1.html#FORLOOPC][Example: 11.13 C-Style for loop.]]
+
+There are more intuitive examples of list based iteration, c-style for loop and others at the [[https://tldp.org/LDP/abs/html/loops1.html][TLDP's documentations]].
+
+** While Loop
+:PROPERTIES:
+:CUSTOM_ID: while-loop
+:END:
+While loops in bash are similar to other languages, it runs till the given condition is True. Below is the given syntax for while loop.
+
+#+begin_src bash
+OFFSET=1
+LIMIT=10
+while [ $OFFSET -lt $LIMIT ]; do
+    echo -n "$OFFSET "
+    OFFSET=$(($OFFSET+1))
+done
+#+end_src
+
+#+begin_example
+1 2 3 4 5 6 7 8 9
+#+end_example
+
+** Until Loop
+:PROPERTIES:
+:CUSTOM_ID: until-loop
+:END:
+Lastly the loop that is used the least, until loop. The until loop is quite the opposite of the while loop, that is, until loop runs when condition is False, until it becomes True. Lets see the syntax for it.
+
+#+begin_src bash
+counter=1
+until [ $counter -gt 5 ]; do
+    echo -n "$counter "
+    counter=$(($counter+1))
+done
+#+end_src
+
+#+begin_example
+1 2 3 4 5
+#+end_example
+
+More about them at [[https://tldp.org/LDP/abs/html/loops1.html#UNTILLOOPREF][Example: 11.19. until loop]].

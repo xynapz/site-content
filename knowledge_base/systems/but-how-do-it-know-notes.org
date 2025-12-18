@@ -6,7 +6,7 @@
 #+OPTIONS: ^:{} num:nil toc:5 html-postamble:nil
 #+HTML_HEAD: <meta name="pub_date" content="2025-11-21" />
 #+HTML_HEAD: <meta name="updated_date" content="2025-11-22" />
-#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld.me/src/content/writings/systems/but-how-do-it-know-notes.html
+#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld/content/writings/systems/but-how-do-it-know-notes.html
 
 * Speed
 Computers can play games, run complex graphical application, perform compute heavy-task and they seem very complex, How can the computer so all sorts multiple complex calculations at once, How do they handle it?. Well, in reality what they are doing is pretty simple, they are performing basic calculation one instruction at a time, its just that they are doing is so very fast that it looks like it is handling multiple complex things all at once. So, the key thing computers are good are at performing a very simple task at a super fast timeframe.

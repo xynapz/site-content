@@ -7,7 +7,7 @@
 #+HTML_HEAD: <meta name="featured" content="true" />
 #+HTML_HEAD: <meta name="pub_date" content="2025-11-26" />
 #+HTML_HEAD: <meta name="updated_date" content="2025-11-26" />
-#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld.me/src/content/writings/systems/index.html
+#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld/content/writings/systems/index.html
 
 * Introduction
 This note covers my learning and research of systems and computing. While the root-level [[file:../linux/index.org][Linux]] section focuses on user-space utilities, administration, and customization, this *Systems* category dives into how the machine actually works all the way from the hardware initialization level.

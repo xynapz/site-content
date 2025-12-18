@@ -1,0 +1,68 @@
+#+TITLE: Quoting and Expansion
+#+AUTHOR: Angel Dhakal
+#+DATE: 2025-12-17
+#+DESCRIPTION: Documentation on bash shell quoting and expansion.
+#+KEYWORDS: bash, mastery, documentation, technical-docs, quoting, expansion, filename-expansion, path-expansion,variable-expansion, tilde-expansion, brace-expansion, command-substitution, double-quotes, single-quotes, escape-character, linux, linux-docs, shell
+#+OPTIONS: ^:{} num:nil toc:5 html-postamble:nil
+#+HTML_HEAD: <meta name="pub_date" content="2025-12-17" />
+#+HTML_HEAD: <meta name="updated_date" content="2025-12-17" />
+#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld/content/writings/linux/bash/quoting-expansions.html
+#+ORDER: 7
+
+* Quoting & Expansion
+** Quoting Characters
+In bash a lot of characters have special meaning to them, syntactly and logically. Quoting is a mechanism of removing those sepcial meaning of those characters and lay them as plain ASCII characters.
+
+*** Escape Character
+Escape character is used to remove the special meaning from a single character. To acheive this a non-quoted backslash, *\*, is used as the escape character in bash.
+
+#+begin_src bash
+  #without escape char
+  name="Angel"
+  echo "$name"
+
+  #with escape char
+  echo "\$name"
+#+end_src
+
+#+begin_example
+Angel
+$name
+#+end_example
+*** Single Quotes
+Everything withing the single quotes is taken literally, this is also called strong quoting. Every special characters inside the single quote loses its meaning these include *$*, *\*, *\"* etc. A single quote character *'* also cannot be inside single quotes.
+
+One example:
+#+begin_src bash
+  echo '$date'
+#+end_src
+
+#+begin_example
+: $date
+#+end_example
+
+*** Double Quotes
+Double quoting a variable or text is known as weak quoting. It quotes the literal value of all characters except, backslash *\*, dollar sign *$* and backticks.
+
+#+begin_src bash
+  echo "Angel'$\"\\"
+#+end_src
+
+#+begin_example
+Angel'$"\
+#+end_example
+
+** Shell Expansion
+When bash executes a script, it splits the commands into tokens (operands, operators, etc), some of these tokens might not be resolved, one famous example is *~* symbol, it doesnt have any meaning in the linux-kernel, its the bash shell that resolves *~* to */home/uname/* everywhere it encounters the symbol. And there are eight types of symbol exansion in bash.
+
+- **Brace Expansion**
+- **Tilde Expansion**
+- **Parameter & Variable Expansion**
+- **Command Substitution**
+- **Arithmetic Expansion**
+- **Process Substitution**
+- **Word Splitting**
+- **Filename Expansion**
+- **Aliase Expansion**
+
+You can get more information about them at [[https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_03_04.html][TLDP-Bash-Beginners-Guide]].

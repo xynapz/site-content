@@ -1,0 +1,12 @@
+#+TITLE: The awk programming language.
+#+AUTHOR: Angel Dhakal
+#+DATE: 2025-12-17
+#+DESCRIPTION: Documentation on the GNU awk programming language.
+#+KEYWORDS: bash, mastery, documentation, technical-docs, awk, gnu/awk, cli, linux, linux-docs, shell
+#+OPTIONS: ^:{} num:nil toc:5 html-postamble:nil
+#+HTML_HEAD: <meta name="pub_date" content="2025-12-17" />
+#+HTML_HEAD: <meta name="updated_date" content="2025-12-17" />
+#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld/content/writings/linux/bash/cmd-awk.html
+#+ORDER: 12
+
+* The /awk/ programming language.

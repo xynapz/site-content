@@ -1,0 +1,19 @@
+#+TITLE: Bash Introduction
+#+AUTHOR: Angel Dhakal
+#+DATE: 2025-12-17
+#+DESCRIPTION: Documentation on bash shell script invocation and startups.
+#+KEYWORDS: bash, mastery, documentation, technical-docs, linux, linux-docs, shell
+#+OPTIONS: ^:{} num:nil toc:5 html-postamble:nil
+#+HTML_HEAD: <meta name="pub_date" content="2025-12-17" />
+#+HTML_HEAD: <meta name="updated_date" content="2025-12-17" />
+#+HTML_HEAD: <meta name="order" content="1" />
+#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld/content/writings/linux/bash/introduction.html
+
+* Bash Mastery Documentation & Logs
+I am writing this post from arch post installation environment, where I dont have any desktop environment setup, I am documenting this process of writing a bash script to automate my post-install steps of my arch-linux system.
+
+* About Bash
+Bash is a scripting language or a command interpreter developed for unix-like systems like linux. It was created by Brian Fox in 1989, and named It *Bash (Bourne Again Shell)* indicating its a born anew shell scripting language that was meant to replace its predecessor, Bourne Shell AKA *sh*.
+
+* My History and Usecases
+I knew of the concept of automating batch of repetitive tasks using scripting in linux environments from way back from my college days, where I would often distro-hop, try new tools, naively participate in linux community formus in sites like reddits, arch-wiki, ubuntu-stackexchage, etc. I know a very basic level of scripting right now as well, but I would not say that I am a master at it to solve any freakin problem with scripting. But I have used linux for almost 7 years, 8 in May 2026, and just knowing the basics in 7 years is shameful, This post will first, test my skill boundary in bash and rework on it and learn new things my writing a script to setup the post-arch installation, desktop environment for myself, using my already existing [[https://github.com/xynapz/dotfiles][dotfiles repository]] in github.

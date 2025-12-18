@@ -1,0 +1,53 @@
+#+TITLE: Bash Invocation and Startup
+#+AUTHOR: Angel Dhakal
+#+DATE: 2025-12-17
+#+DESCRIPTION: Documentation on bash shell script invocation and startups.
+#+KEYWORDS: bash, mastery, documentation, technical-docs, command invocation, script invocation, session startup, config file, linux, linux-docs, shell
+#+OPTIONS: ^:{} num:nil toc:5 html-postamble:nil
+#+HTML_HEAD: <meta name="pub_date" content="2025-12-17" />
+#+HTML_HEAD: <meta name="updated_date" content="2025-12-17" />
+#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld/content/writings/linux/bash/bash-invocation-and-startup.html
+#+ORDER: 2
+
+* Bash Invocation & Startup
+Invocation is just another name for how bash starts up, think of it like how a computer system start (normal mode, safe mode, recovery mode), bash also does a similar thing to boot itself up, during when a user login to system or starts a shell in already authenticated environment. This is the invocation of bash.
+
+Startup files are the initial script files that the bash executes when it starts.
+
+** Two methods of invocation
+*** Interactive & Non-Interactive Invocations
+*Interactive*: This is the way which most users of linux are very familiar way of running some bash commands. When you open a terminal, it waits for you to type a command in, after a symbol, mostly after *$* symbol, it then executes the command and returns the output to the terminal. This method of invocation handles history of commands, and the process/job/task itself.
+
+*Non-Interactive*: A non-interact invocation is the method of bash invocation in which, a script file is run instead of a command. All scripts use non-interactive shell for invocation and they cannot do any other task in between execution of that script.
+*** Login & Non-Login Interactive Invocation
+*Login Shell*: This is the shell, a user gets access to after authenticating with their username and password during the session start. This is the stage where bash sets up the entire environment, including PATH and other environment variables.
+
+*Non-Login Shell*: After you are logged in to your desktop, you open a new terminal, or open a new tab inside of an already opened terminal, or when typing bash inside of an existing shell, the shell that starts is the non-login shell.
+
+** Scenario 1: Invocation with Interactive Login Shell.
+When we first login to a system, the bash shell reads some startup scripts in order, they are as follows:
+1. */etc/profile* which contains system-wide environment variables and configurations.
+2. Then it looks for one of these files in order:
+   - ~/.bash_profile
+   - ~/.bash_login
+   - ~/.profile
+3. And upon logout *~/.bash_logout* is read.
+
+*Now a question arised in my mind*
+*how about the .bashrc file?*
+Well it seems *.bashrc* file is not read by the login shell. This file is read by the non-login shells, explained below in [[*Scenario 2: Invocation with Interactive Non-Login Shell.][Scenario 2]].
+** Scenario 2: Invocation with Interactive Non-Login Shell.
+When we open a terminal by clicking on the terminal icon from our desktop, the shell that opens is a interactive non-login shell. Or, if we open a new tab in already opened terminal, or.These are few examples of interactive non-login shell.
+The files the bash shell reads when entering the interactive non-login shell is, intense music, more-intensified music, yes, its *~/.bashrc*
+** Scenario 3: Invoking in Non-Interactive Shell.
+All script files that run are in a non-interactive shell. In this scenario, the script is run in a clean slate, to make sure that the script runs predictably.
+** Scenario 4: Invocation with the sh command.
+If you create a symbolic link of bash and name it as sh, and run a script using thew new named sh link, it runs as a POSIX standard *sh* shelll instead. In that case it will read these files in order:
+1. /etc/profile
+2. ~/.bash_profile
+** Scenario 5: Invocation in POSIX Mode.
+In this mode, bash is forced to adhere to the POSIX standard to execute the scripts. We can enable posix mode by running *set -o posix* or running bash with *--posix* option, will also force the standard, the last approach is, by setting the environment variable *POSIXLY_CORRECT*, which also forces the POSIX standard for the script we are trying to run. The advantage of this is that our script will be able to run in most system that adhere to strict POSIX standards.
+** Scenatio 6: Invoked Remotely.
+When we invoke a script in a remote shell, the file read by the remote shell is the *~/.bashrc* file.
+
+Read More about Invocation and Startup at [[https://tldp.org/LDP/Bash-Beginners-Guide/html/Bash-Beginners-Guide.html#sect_01_02_02][TLDP 1.2.2 Features only found in bash]].

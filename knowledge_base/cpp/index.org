@@ -7,7 +7,7 @@
 #+HTML_HEAD: <meta name="featured" content="true" />
 #+HTML_HEAD: <meta name="pub_date" content="2025-11-23" />
 #+HTML_HEAD: <meta name="updated_date" content="2025-11-23" />
-#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld.me/src/content/writings/cpp/index.html
+#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld/content/writings/cpp/index.html
 
 
 * Welcome

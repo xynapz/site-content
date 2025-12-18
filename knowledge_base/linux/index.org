@@ -7,7 +7,7 @@
 #+HTML_HEAD: <meta name="featured" content="true" />
 #+HTML_HEAD: <meta name="pub_date" content="2025-11-26" />
 #+HTML_HEAD: <meta name="updated_date" content="2025-11-26" />
-#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld.me/src/content/writings/linux/index.html
+#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld/content/writings/linux/index.html
 
 * The Repository
 Welcome to my collection of Linux documentation. This section of the site serves as a digital garden for my explorations into open-source operating systems. Here you will find deep dives into the art of shell scripting, system administration, and reproducible environments. For low-level internals, see the [[../systems/index.org][Systems]] section.

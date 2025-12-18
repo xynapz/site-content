@@ -6,7 +6,7 @@
 #+OPTIONS: ^:{} num:nil toc:5 html-postamble:nil
 #+HTML_HEAD: <meta name="pub_date" content="2025-11-23" />
 #+HTML_HEAD: <meta name="updated_date" content="2025-11-23" />
-#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld.me/src/content/writings/cpp/ds/hash-table.html
+#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld/content/writings/cpp/ds/hash-table.html
 
 * Hashtable implementation using seperate chaining.
 Hash tables are everywhere, but I realized I've been taking them for granted. Instead of just relying on the standard library, I wanted to get my hands dirty and build one myself to see what actually makes them speed efficient. I'm going with separate chaining here, mostly because it feels like a solid, manageable way to handle collisions without getting too bogged down in open addressing complexities right off the bat.

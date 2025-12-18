@@ -1,0 +1,22 @@
+#+TITLE: Logging
+#+AUTHOR: Angel Dhakal
+#+DATE: 2025-12-17
+#+DESCRIPTION: Documentation on bash shell script invocation and startups.
+#+KEYWORDS: bash, mastery, documentation, technical-docs, echo, logging, printing, display, output, shell output, linux, linux-docs, shell
+#+OPTIONS: ^:{} num:nil toc:5 html-postamble:nil
+#+HTML_HEAD: <meta name="pub_date" content="2025-12-17" />
+#+HTML_HEAD: <meta name="updated_date" content="2025-12-17" />
+#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld/content/writings/linux/bash/logging.html
+#+ORDER: 4
+
+* Logging
+While writing a shell script, in my opinion, it is very important to see real-time log of what commands are executing?, what procedure are being executed?, what issue has arrised? these details are very crucial for observing, analysing and debugging the script in case if the script fails or crashes. Using colorful text appropriately is a best practice that will make it easier to read info from a black screen.
+
+To log data from a script to a standard output like a terminal screen, we can just do echo to print stuff on the screen.
+#+begin_src bash
+  echo "Message to log to the screen."
+#+end_src
+
+#+begin_example
+Message to log to the screen.
+#+end_example

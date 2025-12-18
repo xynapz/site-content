@@ -1,0 +1,33 @@
+#+TITLE: Functions
+#+AUTHOR: Angel Dhakal
+#+DATE: 2025-12-17
+#+DESCRIPTION: Documentation on bash functions.
+#+KEYWORDS: bash, mastery, documentation, technical-docs, linux, linux-docs, shell
+#+OPTIONS: ^:{} num:nil toc:5 html-postamble:nil
+#+HTML_HEAD: <meta name="pub_date" content="2025-12-17" />
+#+HTML_HEAD: <meta name="updated_date" content="2025-12-17" />
+#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld/content/writings/linux/bash/functions.html
+#+ORDER: 15
+
+* Functions
+In bash, functions exists, like other programming languages, they are used for reusing repetitive piece of logic multiple times without repeating too much. Function usually takes arguments executes some instructions or commands in bash and return back. The syntax for a function is simple, the name of the function followd by a pair of parenthesis, and the function's body enclosed inside a pair of curly braces.
+
+#+begin_src bash
+  log () {
+      echo "Static Message"
+  }
+
+  log_file() {
+      echo "$1"
+  }
+
+  log
+  log_file "test.sh"
+#+end_src
+
+#+begin_example
+Static Message
+test.sh
+#+end_example
+
+More about functions at [[https://tldp.org/LDP/Bash-Beginners-Guide/html/Bash-Beginners-Guide.html#sect_11_01][TLDP Functions]].

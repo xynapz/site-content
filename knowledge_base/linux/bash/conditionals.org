@@ -1,0 +1,143 @@
+#+TITLE: Conditional Statements
+#+AUTHOR: Angel Dhakal
+#+DATE: 2025-12-17
+#+DESCRIPTION: Documentation on bash conditionals.
+#+KEYWORDS: bash, mastery, documentation, technical-docs, conditional, if-elif-else, case, if, if-else, else, elif, CASE, linux, linux-docs, shell
+#+OPTIONS: ^:{} num:nil toc:5 html-postamble:nil
+#+HTML_HEAD: <meta name="pub_date" content="2025-12-17" />
+#+HTML_HEAD: <meta name="updated_date" content="2025-12-17" />
+#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld/content/writings/linux/bash/conditionals.html
+#+ORDER: 13
+
+* Conditional Statements
+The conditional statements provides a mechanism for executing commands based on some condition, just like in other general programming languages, they follow the same structure, *if / elif / else* blocks to acheive conditional execution of instructions. Bash also has case statements, similar to switch statements in other general purpose programming languages. Lets quickly look at each of them. There's a lot of examples and problems at the end of this post to put into practice.
+
+** if-elif-else
+:PROPERTIES:
+:CUSTOM_ID: if-elif-else
+:END:
+They are our standard building blocks for conditional exection, the syntax for them is a little different from languages like c/c++, but still they are as much intuitive.
+
+#+begin_src bash
+if [[ $age -gt 18 ]]; then
+    echo "Adult"
+elif [[ $age -eq 18 ]]; then
+    echo "New Adult"
+else
+    echo "Minor"
+fi
+#+end_src
+
+Conditional expression we used here is very simple, but in bash, there a different ways to compare strings, numbers, files, dirs, commands, etc. Lets look at them.
+
+*** Strings and Number Comparison
+**String Comparison**
+| *Operator* | *Description* |
+| ==       | Equals      |
+| !=       | Not-Equals  |
+| -z       | Empty       |
+| -n       | Not-Empty   |
+
+**Number Comparison**
+| *Operator* | *Description*  |
+| -eq      | Equals       |
+| -ne      | Not-Equals   |
+| -gt      | Greater-Than |
+| -lt      | Less-Than    |
+|----------+--------------|
+
+*** Primary Expressions
+There are some common conditional expressions used in if statements, The [[https://tldp.org/LDP/Bash-Beginners-Guide/html/Bash-Beginners-Guide.html#sect_07_01_01_01][TLDP Section 7.1.1.1 Expression used with if]] has a list of these "primaries" that make up the conditional expressions. In TLDP docs, the primaries mentioned are /conditional-expressions/ or /test-command/ that is checked inside of =[...]= or =[[...]]= in a if statements. Below in the table, I have mentioned the ones I use frequently, and the ones I find interesting and the ones that are ambigious and need a clarification for me.
+
+| *Expression*                  | *Functionality*                                                     |
+| =[ -a FILE ]=                 | True if /FILE/ exists.                                              |
+| =[ -d FILE ]=                 | True if /FILE/ is a directory.                                      |
+| =[ -e FILE ]=                 | True if /FILE/ exists (file, dir, device, symlink).                 |
+| =[ -f FILE ]=                 | True if regular /FILE/ exists.                                      |
+| =[ -h FILE ]=                 | True if a symlink /FILE/ exists. (*/GNU/Unix/*)                       |
+| =[ -L FILE ]=                 | True if /FILE/ exists and is symlink. (*/POSIX/*) (*/USE THIS/*)        |
+| =[ -r FILE ]=                 | True if /FILE/ exists and is readable.                              |
+| =[ -w FILE ]=                 | True if /FILE/ exists and is writable.                              |
+| =[ -x FILE ]=                 | True if /FILE/ exists and is executable.                            |
+| =[ -s FILE ]=                 | True if /FILE/ exists and size is greater than 0.                   |
+| =[ -N FILE ]=                 | True if /FILE/ exists and has been modified since it was last read. |
+| =[ -S FILE ]=                 | True if /FILE/ exists and is a socket.                              |
+| =[ -O FILE ]=                 | True if /FILE/ exists and is owned by effective user ID.            |
+| =[ -G FILE ]=                 | True if /FILE/ exists and is owned by effective group ID.           |
+| =[ FILE1 -nt FILE2 ]=         | True if /FILE1/ is newer than or modified recently than /FILE2/.      |
+| =[ FILE1 -ot FILE2 ]=         | True if /FILE1/ is older than /FILE2/.                                |
+| =[ -z String ]=               | True if /length/ of *String* is 0.                                    |
+| =[ -n String ]= or =[ String ]= | True if /length/ of *String* is non-zero.                             |
+| ~[ String1==String2 ]~        | True if the /Strings/ are equal.                                    |
+| ~[ String1!=String2 ]~        | True if the /Strings/ are not-equal.                                |
+
+*** Primary Expression with Arithmetic Binary Operators
+| *Expression*        | *Functionality*       |
+| ~[ ARG1 -eq ARG2 ]~ | Equals              |
+| ~[ ARG1 -ne ARG2 ]~ | Not-Equals          |
+| ~[ ARG1 -lt ARG2 ]~ | Less-Than           |
+| ~[ ARG1 -le ARG2 ]~ | Less-Than-Equals    |
+| ~[ ARG1 -gt ARG2 ]~ | Greater-Than        |
+| ~[ ARG2 -ge ARG2 ]~ | Greater-Than-Equals |
+These arithmetic binary operators works only if *ARG1* and *ARG2* both are integers. If I have to do, an arithmetic operation in bash, I have to make sure that the variables, here, ARG1 and ARG2 are unquoted, example, they cannot be "$ARG1" + "$ARG2", within the quoted string, they must not contain those quoted strings.
+
+*** Chaining Expressions With Logic
+We can chain multiple conditional operators, using some logical operatos like not, and, or, to chain two or more than two expressions.
+| *Operation*          | *Functionality*                                      |
+| ~[ !EXPR ]~          | True if expresion is false, boolean not operation. |
+| ~[ EXPR1 -a EXPR2 ]~ | True if both expression are true, otherwise false. |
+| ~[ EXPR1 -o EXPR2 ]~ | True if either expressions are true.               |
+
+*** Trying the primaries
+We can use the variable *$?* which holds the status code of last executed command, to view the result of out conditional expressions.
+#+begin_src bash
+[ 1 -eq 1 ]; echo $?
+[ "angel" == "angl" ]; echo $?
+[ 2 -gt 1 -a 1 -eq 1 ]; echo $? # eo: 0(true)
+[ -z "" ]; echo $?
+[ -z "a" ]; echo $?
+[ -n "" ]; echo $?
+[ -n "a" ]; echo $?
+[ -f "./index.org" ]; echo $? #the file exists
+[ -d "../linux" ]; echo $? #the file is a dir
+[ -L "./bash-mastery-documentation-and-logs.org" ]; echo $? # the file exists but is not a symlink (-h too)
+#+end_src
+As, we know, the result of a conditional expression, is not a boolean value but a exit status code, where *0* is true and a *non-zero* numberic is false. We can see the output of above commands down below.
+#+begin_example
+| 0 |
+| 1 |
+| 0 |
+| 0 |
+| 1 |
+| 1 |
+| 0 |
+| 0 |
+| 0 |
+| 1 |
+#+end_example
+
+** CASE Statements
+:PROPERTIES:
+:CUSTOM_ID: case-statements
+:END:
+Well, sometimes we have to write nested if statements to acheive some state, and if its too deep, than it might not be readable, so for more complex conditionals, case statements can be very useful.
+
+#+begin_src bash
+animal="dog"
+case "$animal" in
+     cat)
+         echo "cat"
+         ;;
+     dog)
+         echo "dog"
+         ;;
+     *)
+         echo "unknown animal"
+         ;;
+esac
+#+end_src
+
+#+begin_example
+dog
+#+end_example
+More about bash case statement at [[https://tldp.org/LDP/Bash-Beginners-Guide/html/Bash-Beginners-Guide.html#sect_07_03][TLDP - Using case Statements]]. They have docs on case statement on more detail.

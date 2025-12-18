@@ -6,7 +6,7 @@
 #+OPTIONS: ^:{} num:nil toc:5 html-postamble:nil
 #+HTML_HEAD: <meta name="pub_date" content="2025-12-03" />
 #+HTML_HEAD: <meta name="updated_date" content="2025-12-03" />
-#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld.me/src/content/writings/engineering-basics/index.html
+#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld/content/writings/engineering-basics/index.html
 
 * Introduction
 
@@ -19,6 +19,18 @@ This section covers all my learning, practices, research done in engraining myse
 
 ** [[./pre-calculus/index.org][Pre-Calculus]]
 /These notes as well as problem and solutions provided here are my gateway to Calculus-I/
+- [[./pre-calculus/functions.org][Functions.]]
+- [[./pre-calculus/angle-and-their-measures.org][Angle and their measures in degree and radian.]]
+- [[./pre-calculus/trigonometry.org][Trigonometry (Ratios and Unit Circle).]]
+- [[./pre-calculus/trigonometry.org][Trigonometric Functions.]]
+- [[./pre-calculus/exponential-and-logarithmic-functions.org][Exponential Functions.]]
+- [[./pre-calculus/exponential-and-logarithmic-functions.org][Logarithmic Functions.]]
 
 ** [[./calculus-i/index.org][Calculus-I]]
 /These notes, problems, solutions, graphs, concepts, are all my understanding of Calculus-I/
+- [[./calculus-i/limits.org][Limits.]]
+- [[./calculus-i/derivatives.org][Derivatives.]]
+- [[./calculus-i/applications-of-derivatives.org][The Applications of Derivatives.]]
+- [[./calculus-i/integrals.org][Integrals.]]
+- [[./calculus-i/applications-of-integrals.org][Applications of Integrals.]]
+

@@ -6,7 +6,7 @@
 #+OPTIONS: ^:{} num:nil toc:nil html-postamble:nil
 #+HTML_HEAD: <meta name="pub_date" content="2025-11-24" />
 #+HTML_HEAD: <meta name="updated_date" content="2025-11-24" />
-#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld.me/src/content/writings/cpp/ds/index.html
+#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld/content/writings/cpp/ds/index.html
 
 * Data Structures
 This section contains my implementation studies of fundamental data structures in C++.

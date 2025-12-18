@@ -6,7 +6,7 @@
 #+OPTIONS: ^:{} num:nil toc:5 html-postamble:nil
 #+HTML_HEAD: <meta name="pub_date" content="2025-12-06" />
 #+HTML_HEAD: <meta name="updated_date" content="2025-12-06" />
-#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld.me/src/content/writings/systems/emacs.html
+#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld/content/writings/systems/emacs.html
 
 * Functions I Use All The Time
 ** shell-command-on-region =[M-|]=

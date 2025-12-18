@@ -1,0 +1,12 @@
+#+TITLE: The grep command
+#+AUTHOR: Angel Dhakal
+#+DATE: 2025-12-17
+#+DESCRIPTION: Documentation on bash shell script invocation and startups.
+#+KEYWORDS: bash, mastery, documentation, technical-docs, grep, string, matching, pattern-matching, regex, linux, linux-docs, shell
+#+OPTIONS: ^:{} num:nil toc:5 html-postamble:nil
+#+HTML_HEAD: <meta name="pub_date" content="2025-12-17" />
+#+HTML_HEAD: <meta name="updated_date" content="2025-12-17" />
+#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld/content/writings/linux/bash/cmd-grep.html
+#+ORDER: 10
+
+* The /grep/ command
