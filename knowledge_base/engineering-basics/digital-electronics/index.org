@@ -6,6 +6,7 @@
 #+OPTIONS: ^:{} num:nil toc:5 html-postamble:nil
 #+XZHH_PUB_DATE: 2025-12-03
 #+XZHH_UPDATED_DATE: 2025-12-03
+#+XZHH_ORDER: 1
 #+EXPORT_FILE_NAME: /home/angel/xynapz/angeld/content/writings/engineering-basics/digital-electronics/index.html
 
 * Signal

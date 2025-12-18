@@ -8,6 +8,7 @@
 #+XZHH_FEATURED: true
 #+XZHH_PUB_DATE: 2025-11-26
 #+XZHH_UPDATED_DATE: 2025-11-26
+#+XZHH_ORDER: 1
 #+EXPORT_FILE_NAME: /home/angel/xynapz/angeld/content/writings/systems/linux-kernel/index.html
 
 * Introduction
