@@ -4,8 +4,8 @@
 #+DESCRIPTION: This note is a summary of my reading from *Operating System: Three Easy Pieces* by *by Remzi and Andrea Arpaci-Dusseau*
 #+KEYWORDS: os, ostep, system
 #+OPTIONS: ^:{} num:nil toc:5 html-postamble:nil
-#+HTML_HEAD: <meta name="pub_date" content="2025-11-21" />
-#+HTML_HEAD: <meta name="updated_date" content="2025-11-21" />
+#+XZHH_PUB_DATE: 2025-11-21
+#+XZHH_UPDATED_DATE: 2025-11-21
 #+EXPORT_FILE_NAME: /home/angel/xynapz/angeld/content/writings/systems/operating-systems-three-easy-pieces.html
 
 * Introduction to Operating Systems

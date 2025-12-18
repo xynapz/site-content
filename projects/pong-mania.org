@@ -3,13 +3,13 @@
 #+DATE: 2025-11-21
 #+DESCRIPTION: A classic Pong Arcade Game.
 #+KEYWORDS: project, game, pong, golang, html, websockets
-#+HTML_HEAD: <meta name="pub_date" content="2025-11-21" />
-#+HTML_HEAD: <meta name="updated_date" content="2025-11-21" />
-#+HTML_HEAD: <meta name="stack" content="Go, HTMX, WebSockets, Tailwind, SQLite" />
-#+HTML_HEAD: <meta name="platform" content="Web" />
-#+HTML_HEAD: <meta name="featured" content="true" />
-#+HTML_HEAD: <meta name="website" content="https://angeld.me/project/pong-mania" />
-#+HTML_HEAD: <meta name="github" content="https://github.com/xynapz/pong-mania" />
+#+XZHH_PUB_DATE: 2025-11-21
+#+XZHH_UPDATED_DATE: 2025-11-21
+#+XZHH_STACK: Go, HTMX, WebSockets, Tailwind, SQLite
+#+XZHH_PLATFORM: Web
+#+XZHH_FEATURED: true
+#+XZHH_WEBSITE: https://angeld.me/project/pong-mania
+#+XZHH_GITHUB: https://github.com/xynapz/pong-mania
 #+OPTIONS: ^:{} num:nil toc:5 html-postamble:nil
 #+EXPORT_FILE_NAME: /home/angel/xynapz/angeld/content/project/pong-mania.html
 

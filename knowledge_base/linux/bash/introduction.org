@@ -4,9 +4,9 @@
 #+DESCRIPTION: Documentation on bash shell script invocation and startups.
 #+KEYWORDS: bash, mastery, documentation, technical-docs, linux, linux-docs, shell
 #+OPTIONS: ^:{} num:nil toc:5 html-postamble:nil
-#+HTML_HEAD: <meta name="pub_date" content="2025-12-17" />
-#+HTML_HEAD: <meta name="updated_date" content="2025-12-17" />
-#+HTML_HEAD: <meta name="order" content="1" />
+#+XZHH_PUB_DATE: 2025-12-17
+#+XZHH_UPDATED_DATE: 2025-12-17
+#+XZHH_ORDER: 1
 #+EXPORT_FILE_NAME: /home/angel/xynapz/angeld/content/writings/linux/bash/introduction.html
 
 * Bash Mastery Documentation & Logs

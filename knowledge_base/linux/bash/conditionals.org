@@ -4,10 +4,10 @@
 #+DESCRIPTION: Documentation on bash conditionals.
 #+KEYWORDS: bash, mastery, documentation, technical-docs, conditional, if-elif-else, case, if, if-else, else, elif, CASE, linux, linux-docs, shell
 #+OPTIONS: ^:{} num:nil toc:5 html-postamble:nil
-#+HTML_HEAD: <meta name="pub_date" content="2025-12-17" />
-#+HTML_HEAD: <meta name="updated_date" content="2025-12-17" />
+#+XZHH_PUB_DATE: 2025-12-17
+#+XZHH_UPDATED_DATE: 2025-12-17
 #+EXPORT_FILE_NAME: /home/angel/xynapz/angeld/content/writings/linux/bash/conditionals.html
-#+ORDER: 13
+#+XZHH_ORDER: 13
 
 * Conditional Statements
 The conditional statements provides a mechanism for executing commands based on some condition, just like in other general programming languages, they follow the same structure, *if / elif / else* blocks to acheive conditional execution of instructions. Bash also has case statements, similar to switch statements in other general purpose programming languages. Lets quickly look at each of them. There's a lot of examples and problems at the end of this post to put into practice.

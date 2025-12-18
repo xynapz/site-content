@@ -4,10 +4,10 @@
 #+DESCRIPTION: Documentation on regular-expression with bash.
 #+KEYWORDS: bash, mastery, documentation, technical-docs, regular-expression, pattern-matching, string-matching, text-matching, linux, linux-docs, shell
 #+OPTIONS: ^:{} num:nil toc:5 html-postamble:nil
-#+HTML_HEAD: <meta name="pub_date" content="2025-12-17" />
-#+HTML_HEAD: <meta name="updated_date" content="2025-12-17" />
+#+XZHH_PUB_DATE: 2025-12-17
+#+XZHH_UPDATED_DATE: 2025-12-17
 #+EXPORT_FILE_NAME: /home/angel/xynapz/angeld/content/writings/linux/bash/regular-expressions.html
-#+ORDER: 8
+#+XZHH_ORDER: 8
 
 * Regular Expressions
 Regular Expression pvovides a language for performing pattern matching, data extraction and heavy text processing. They are not just in bash but everywhere in computer science, where text manipulation and processing involves like, text editors, find-and-replace, a lot of technologies use regular expressions to find a pattern of text in a large pool of text object.

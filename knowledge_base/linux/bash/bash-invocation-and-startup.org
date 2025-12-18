@@ -4,10 +4,10 @@
 #+DESCRIPTION: Documentation on bash shell script invocation and startups.
 #+KEYWORDS: bash, mastery, documentation, technical-docs, command invocation, script invocation, session startup, config file, linux, linux-docs, shell
 #+OPTIONS: ^:{} num:nil toc:5 html-postamble:nil
-#+HTML_HEAD: <meta name="pub_date" content="2025-12-17" />
-#+HTML_HEAD: <meta name="updated_date" content="2025-12-17" />
+#+XZHH_PUB_DATE: 2025-12-17
+#+XZHH_UPDATED_DATE: 2025-12-17
 #+EXPORT_FILE_NAME: /home/angel/xynapz/angeld/content/writings/linux/bash/bash-invocation-and-startup.html
-#+ORDER: 2
+#+XZHH_ORDER: 2
 
 * Bash Invocation & Startup
 Invocation is just another name for how bash starts up, think of it like how a computer system start (normal mode, safe mode, recovery mode), bash also does a similar thing to boot itself up, during when a user login to system or starts a shell in already authenticated environment. This is the invocation of bash.

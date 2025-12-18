@@ -4,10 +4,10 @@
 #+DESCRIPTION: Documentation on bash looping and iteration
 #+KEYWORDS: bash, mastery, documentation, technical-docs, loops, for, while, until, linux, linux-docs, shell
 #+OPTIONS: ^:{} num:nil toc:5 html-postamble:nil
-#+HTML_HEAD: <meta name="pub_date" content="2025-12-17" />
-#+HTML_HEAD: <meta name="updated_date" content="2025-12-17" />
+#+XZHH_PUB_DATE: 2025-12-17
+#+XZHH_UPDATED_DATE: 2025-12-17
 #+EXPORT_FILE_NAME: /home/angel/xynapz/angeld/content/writings/linux/bash/loops.html
-#+ORDER: 14
+#+XZHH_ORDER: 14
 
 * Looping and Iterations
 Loop in bash is acheived through three main keyword, for, while, until. I have familiarity with loops in other languages as well, so they are pretty self explanatory, so, here are the basic syntax and key points to remember for them.
