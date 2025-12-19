@@ -7,7 +7,7 @@
 #+OPTIONS: ^:{} num:nil toc:5 html-postamble:nil
 #+XZHH_PUB_DATE: 2025-11-25
 #+XZHH_UPDATED_DATE: 2025-11-25
-#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld/content/writings/systems/c/memory/index.html
+#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld/site-content/knowledge_base/systems/c/memory/index.html
 
 * Introduction
 

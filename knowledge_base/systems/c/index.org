@@ -8,7 +8,7 @@
 #+XZHH_PUB_DATE: 2025-11-25
 #+XZHH_UPDATED_DATE: 2025-11-25
 #+XZHH_ORDER: 3
-#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld/content/writings/systems/c/index.html
+#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld/site-content/knowledge_base/systems/c/index.html
 
 * Core Modules
 I categorize my C notes into specific domains of complexity, some contents are shared with C++ Notes, appropriate links and footnotes are available as well.

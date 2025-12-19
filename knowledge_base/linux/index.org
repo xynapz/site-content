@@ -7,7 +7,7 @@
 #+XZHH_FEATURED: true
 #+XZHH_PUB_DATE: 2025-11-26
 #+XZHH_UPDATED_DATE: 2025-11-26
-#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld/content/writings/linux/index.html
+#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld/site-content/knowledge_base/linux/index.html
 
 * The Repository
 Welcome to my collection of Linux documentation. This section of the site serves as a digital garden for my explorations into open-source operating systems. Here you will find deep dives into the art of shell scripting, system administration, and reproducible environments. For low-level internals, see the [[../systems/index.org][Systems]] section.

@@ -6,7 +6,7 @@
 #+OPTIONS: ^:{} num:nil toc:nil html-postamble:nil
 #+XZHH_PUB_DATE: 2025-11-24
 #+XZHH_UPDATED_DATE: 2025-11-24
-#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld/content/writings/cpp/ds/index.html
+#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld/site-content/knowledge_base/cpp/ds/index.html
 
 * Data Structures
 This section contains my implementation studies of fundamental data structures in C++.

@@ -1,0 +1,20 @@
+#+TITLE: Test Standalone Article
+#+XZHH_ORDER: 999
+#+XZHH_PUB_DATE: 2025-12-18
+#+XZHH_DESCRIPTION: A standalone test article at the root level
+#+XZHH_KEYWORDS: test, standalone
+
+* Introduction
+
+This is a standalone article in the site-content root, not inside any KB.
+
+* Code Example
+
+#+BEGIN_SRC python
+def hello():
+    print("Hello from standalone!")
+#+END_SRC
+
+* Conclusion
+
+Test complete.

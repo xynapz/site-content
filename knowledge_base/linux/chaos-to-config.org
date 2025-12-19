@@ -7,7 +7,7 @@
 #+XZHH_FEATURED: true
 #+XZHH_PUB_DATE: 2025-11-26
 #+XZHH_UPDATED_DATE: 2025-11-26
-#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld/content/writings/linux/chaos-to-config.html
+#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld/site-content/knowledge_base/linux/chaos-to-config.html
 
 * Series: From Chaos to Config
 /Mastering Bash to Tame Arch/

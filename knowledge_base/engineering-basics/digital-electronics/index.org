@@ -7,7 +7,7 @@
 #+XZHH_PUB_DATE: 2025-12-03
 #+XZHH_UPDATED_DATE: 2025-12-03
 #+XZHH_ORDER: 1
-#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld/content/writings/engineering-basics/digital-electronics/index.html
+#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld/site-content/knowledge_base/engineering-basics/digital-electronics/index.html
 
 * Signal
 ** Analog Signals

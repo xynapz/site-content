@@ -6,7 +6,79 @@
 #+OPTIONS: ^:{} num:nil toc:5 html-postamble:nil
 #+XZHH_PUB_DATE: 2025-12-17
 #+XZHH_UPDATED_DATE: 2025-12-17
-#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld/content/writings/linux/bash/arrays.html
+#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld/site-content/knowledge_base/linux/bash/arrays.html
 #+XZHH_ORDER: 6
 
 * Arrays
+Arrays in bash are a collection or a list of some data. Arrays have no maximum size limits in bash, or any member/element of the array can be can be indexed or be even unindexed, can be assigned contigiously or non-contigiously. Bash arrays index are zero-based, i.e. the index of the first element is zero.
+
+** Declaration and initialization of arrays
+*Indirect declaration of arrays.*
+#+begin_example
+ARRAY[INDEX]=VALUE
+#+end_example
+
+*Direct explicit delcaration of arrays.*
+The direct and explicit declaration of array can be done using the *declare* command:
+#+begin_example
+declare -a arr;
+#+end_example
+
+*Compound declaration of arrays*
+#+begin_example
+arr=("apple" "ball" "cat")
+#+end_example
+
+** Deferencing the array variables
+When we are refering to a item in an array, we must do it inside the curly braces, to bypass the shell expansion operator [fn:1].
+
+The Syntax
+#+begin_src bash
+array=(one two three)
+echo ${array[*]}
+echo ${array[@]}
+#+end_src
+*Result*
+#+begin_example
+one two three
+one two three
+#+end_example
+
+The ~*~ and ~@~ are used to refer to every members of the array.
+
+*** Dereferencing with an index
+
+The syntax:
+#+begin_src bash
+array=(one two three)
+echo ${array[0]}
+echo ${array[1]}
+echo ${array[2]}
+#+end_src
+*Result*
+#+begin_example
+one
+two
+three
+#+end_example
+
+** Updating member of an array by dereferencing
+
+The syntax:
+#+begin_src bash
+array=(1 2 3)
+echo ${array[@]}
+array[2]=4
+echo ${array[*]}
+#+end_src
+
+#+begin_example
+1 2 3
+1 2 4
+#+end_example
+
+
+[fn:1] To bypass the shell interpretation of expansion operators. If the index number is @ or *, all members of an array are referenced. view more at [[https://tldp.org/LDP/Bash-Beginners-Guide/html/Bash-Beginners-Guide.html#sect_10_02_02][Dereferencing the variables in an array]], from TLDP.
+
+** Deleting array members
+To delete a member of an array,

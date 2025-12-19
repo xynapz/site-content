@@ -7,7 +7,7 @@
 #+XZHH_FEATURED: true
 #+XZHH_PUB_DATE: 2025-11-23
 #+XZHH_UPDATED_DATE: 2025-11-23
-#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld/content/writings/cpp/index.html
+#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld/site-content/knowledge_base/cpp/index.html
 
 
 * Welcome

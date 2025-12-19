@@ -7,7 +7,7 @@
 #+XZHH_FEATURED: true
 #+XZHH_PUB_DATE: 2025-11-26
 #+XZHH_UPDATED_DATE: 2025-11-26
-#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld/content/writings/systems/index.html
+#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld/site-content/knowledge_base/systems/index.html
 
 * Introduction
 This note covers my learning and research of systems and computing. While the root-level [[file:../linux/index.org][Linux]] section focuses on user-space utilities, administration, and customization, this *Systems* category dives into how the machine actually works all the way from the hardware initialization level.

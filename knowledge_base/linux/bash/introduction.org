@@ -7,7 +7,7 @@
 #+XZHH_PUB_DATE: 2025-12-17
 #+XZHH_UPDATED_DATE: 2025-12-17
 #+XZHH_ORDER: 1
-#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld/content/writings/linux/bash/introduction.html
+#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld/site-content/knowledge_base/linux/bash/introduction.html
 
 * Bash Mastery Documentation & Logs
 I am writing this post from arch post installation environment, where I dont have any desktop environment setup, I am documenting this process of writing a bash script to automate my post-install steps of my arch-linux system.

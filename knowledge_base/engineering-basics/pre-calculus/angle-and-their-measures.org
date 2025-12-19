@@ -7,7 +7,7 @@
 #+XZHH_PUB_DATE: 2025-12-16
 #+XZHH_UPDATED_DATE: 2025-12-16
 #+XZHH_ORDER: 2
-#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld/content/writings/engineering-basics/pre-calculus/angle-and-their-measures.html
+#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld/site-content/knowledge_base/engineering-basics/pre-calculus/angle-and-their-measures.html
 
 * Angle and their measures
 A ray is a line that has a fixed starting point but doesn't have a fixed endpoint, rays have one fixed endpoint and extend to infinity. So, the measurement of a ray is not possible.

@@ -11,7 +11,7 @@
 #+XZHH_WEBSITE: https://angeld.me/project/pong-mania
 #+XZHH_GITHUB: https://github.com/xynapz/pong-mania
 #+OPTIONS: ^:{} num:nil toc:5 html-postamble:nil
-#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld/content/project/pong-mania.html
+#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld/site-content/projects/pong-mania.html
 
 * Introduction
 In 2024, I embarked on an exciting journey to recreate the classic Pong game, but with a modern twist: real-time multiplayer. Pong-Mania leverages modern technologies like Golang, HTMX, and WebSockets to deliver a seamless multiplayer experience where players from around the world can compete against each other in real time.

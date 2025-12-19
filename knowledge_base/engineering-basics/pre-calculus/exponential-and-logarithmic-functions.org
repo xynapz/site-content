@@ -7,6 +7,6 @@
 #+XZHH_PUB_DATE: 2025-12-16
 #+XZHH_UPDATED_DATE: 2025-12-16
 #+XZ_ORDER: 4
-#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld/content/writings/engineering-basics/pre-calculus/exponential-and-logarithmic-functions.html
+#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld/site-content/knowledge_base/engineering-basics/pre-calculus/exponential-and-logarithmic-functions.html
 
 * Exponential & Logarithmic Functions

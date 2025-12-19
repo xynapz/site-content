@@ -10,7 +10,7 @@
 #+XZHH_WEBSITE: /project/mdpr
 #+XZHH_GITHUB: https://github.com/xynapz/mdpr
 #+OPTIONS: ^:{} num:nil toc:5 html-postamble:nil
-#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld/content/project/mdpr.html
+#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld/site-content/projects/mdpr.html
 * mdpr - Multi-line Markdown Parser
 mdpr is a command-line tool written in C that parses multi-line code blocks within a markdown file and extracts only the relevant code content. This is particularly useful for extracting code snippets from large markdown files containing documentation or tutorials.
 ** Features

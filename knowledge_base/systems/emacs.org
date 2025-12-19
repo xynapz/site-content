@@ -7,7 +7,7 @@
 #+XZHH_PUB_DATE: 2025-12-06
 #+XZHH_UPDATED_DATE: 2025-12-06
 #+XZHH_ORDER: 0
-#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld/content/writings/systems/emacs.html
+#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld/site-content/knowledge_base/systems/emacs.html
 
 * Functions I Use All The Time
 ** shell-command-on-region =[M-|]=

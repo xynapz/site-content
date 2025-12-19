@@ -7,6 +7,94 @@
 #+XZHH_PUB_DATE: 2025-12-16
 #+XZHH_UPDATED_DATE: 2025-12-16
 #+XZHH_ORDER: 1
-#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld/content/writings/engineering-basics/pre-calculus/functions.html
+#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld/site-content/knowledge_base/engineering-basics/pre-calculus/functions.html
 
-* Functions
+* Introduction
+In engineering, a **function** is the fundamental tool used to model relationships between physical quantities. Whether calculating stress vs. strain or voltage vs. time, functions map an input to a specific output.
+
+** Definition
+Formally, a function \( f \) from a set \( X \) to a set \( Y \) is a rule that assigns to each element \( x \in X \) exactly one element \( y \in Y \).
+
+We write this as:
+\[ y = f(x) \]
+
+- **Independent Variable:** \( x \) (the input)
+- **Dependent Variable:** \( y \) (the output)
+
+#+BEGIN_QUOTE
+"A function is like a machine: you put raw material (input) in, and you get a finished product (output) out."
+#+END_QUOTE
+
+* Core Concepts
+
+** Domain and Range
+Understanding the limitations of a system is crucial in engineering.
+- **Domain:** The set of all possible input values (\(x\)) for which the function is defined.
+- **Range:** The set of all possible output values (\(y\)).
+
+*** Common Domain Restrictions
+1. **Division by Zero:** In \( f(x) = \frac{1}{x} \), \( x \neq 0 \).
+2. **Even Roots of Negatives:** In \( f(x) = \sqrt{x} \), \( x \ge 0 \) (in the real number system).
+3. **Logarithms:** In \( f(x) = \ln(x) \), \( x > 0 \).
+
+** The Vertical Line Test
+A graph represents a function if and only if no vertical line intersects the graph at more than one point.
+- *Example:* A circle \( x^2 + y^2 = r^2 \) is **not** a function (fails the test).
+- *Example:* A parabola \( y = x^2 \) **is** a function.
+
+* Classification of Functions
+Functions in engineering are generally categorized as follows:
+
+| Category | Type | Example | Engineering Application |
+|----------|------|---------|-------------------------|
+| **Algebraic** | Linear | \( f(x) = mx + b \) | Ohm's Law (\(V=IR\)) |
+| | Quadratic | \( f(x) = ax^2 + bx + c \) | Projectile Motion |
+| | Polynomial | \( f(x) = a_n x^n + \dots \) | Structural beam deflection |
+| | Rational | \( f(x) = \frac{P(x)}{Q(x)} \) | Control systems (Transfer functions) |
+| **Transcendental** | Exponential | \( f(x) = e^x \) | Capacitor charging/discharging |
+| | Logarithmic | \( f(x) = \ln(x) \) | Signal processing (Decibels) |
+| | Trigonometric | \( f(x) = \sin(x) \) | AC Circuits, Vibrations |
+
+* Function Operations
+
+** Composition of Functions
+Composite functions model systems where the output of one process becomes the input of another.
+Given \( f(x) \) and \( g(x) \):
+\[ (f \circ g)(x) = f(g(x)) \]
+
+** Inverse Functions
+The inverse function, denoted \( f^{-1}(x) \), reverses the operation of \( f \).
+- *Condition:* A function must be **one-to-one** (passes the Horizontal Line Test) to have an inverse.
+- *Relationship:* \( f(f^{-1}(x)) = x \) and \( f^{-1}(f(x)) = x \).
+
+* Graphical Visualization
+Visualizing functions is essential for understanding behavior. Below is a Python script embedded in this note to generate a plot of basic functions.
+
+#+begin_src python
+import matplotlib as plt
+#+end_src
+
+#+CAPTION: A comparison of linear, quadratic, and cubic growth.
+#+RESULTS:
+[[file:function_comparison.png]]
+
+* Concept Diagram: The Black Box
+Since we cannot render complex diagrams in plain text, we often use text-based representations or link to resources.
+
+#+BEGIN_EXPORT html
+<pre class="mermaid">
+flowchart LR
+    A["Input: x"] --> B["Function f(x)"]
+    B --> C["Output: y = f(x)"]
+</pre>
+#+END_EXPORT
+
+* Practice Problems
+1. Determine the domain of \( f(x) = \sqrt{4 - x^2} \).
+2. Find the inverse of \( f(x) = 3x + 2 \).
+3. If \( f(x) = x^2 \) and \( g(x) = x + 1 \), find \( f(g(x)) \).
+
+* References & Further Reading
+- Stewart, J. (2015). *Calculus: Early Transcendentals*. Cengage Learning.
+- [[https://angeld.me/writings/engineering-basics/pre-calculus][Return to Pre-Calculus Index]]
+- [[https://hyperphysics.phy-astr.gsu.edu/hbase/index.html][HyperPhysics: Math for Physics]]
