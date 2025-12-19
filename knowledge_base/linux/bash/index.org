@@ -39,6 +39,5 @@ The array in bash I, think is kinda similar to arrays in the *c programming lang
   - [[file:loops.org::#for-loops][The for loop.]]
   - [[file:loops.org::#while-loop][The while loop.]]
   - [[file:loops.org::#until-loop][The until loop.]]
-  - [[file:loops.org::#until-loop][Until Loop]]
 - [[./functions.org][Functions]]
 

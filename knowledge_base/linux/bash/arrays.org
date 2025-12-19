@@ -13,18 +13,18 @@
 Arrays in bash are a collection or a list of some data. Arrays have no maximum size limits in bash, or any member/element of the array can be can be indexed or be even unindexed, can be assigned contigiously or non-contigiously. Bash arrays index are zero-based, i.e. the index of the first element is zero.
 
 ** Declaration and initialization of arrays
-*Indirect declaration of arrays.*
+*** Indirect declaration of arrays.
 #+begin_example
 ARRAY[INDEX]=VALUE
 #+end_example
 
-*Direct explicit delcaration of arrays.*
-The direct and explicit declaration of array can be done using the *declare* command:
+*** Direct explicit delcaration of arrays.
+The direct and explicit declaration of array can be done using the *declare* built-in:
 #+begin_example
 declare -a arr;
 #+end_example
 
-*Compound declaration of arrays*
+*** Compound declaration of arrays
 #+begin_example
 arr=("apple" "ball" "cat")
 #+end_example
@@ -66,7 +66,6 @@ one
 two
 three
 #+end_example
-
 
 ** Adding elements to an array
 Lets create an array and see an example of how we can easily add an element to the an array. Lets create a simple names array.
@@ -171,8 +170,7 @@ wholist=(
 
 # scenario-1: the while loop
 count=0
-while [ "x${wholist[count]}" != "x" ]
-do
+while [ "${wholist[count]}" != "" ]; do
    count=$(( $count + 1 ))
 done
 echo $count
@@ -191,7 +189,6 @@ for i in "${wholist[@]}"; do
     count3=$(($count3+1))
 done
 echo "$count3"
-
 #+end_src
 *Result*
 #+begin_example
