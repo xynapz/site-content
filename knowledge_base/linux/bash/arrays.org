@@ -35,6 +35,7 @@ When we are refering to a item in an array, we must do it inside the curly brace
 The Syntax
 #+begin_src bash
 array=(one two three)
+
 echo ${array[*]}
 echo ${array[@]}
 #+end_src
@@ -46,11 +47,15 @@ one two three
 
 The ~*~ and ~@~ are used to refer to every members of the array.
 
+*** Key Point
+Referring to the content of a member variable of an array without providing an index number is the same as referring to the content of the first element, the one referenced with index number zero.
+
 *** Dereferencing with an index
 
 The syntax:
 #+begin_src bash
 array=(one two three)
+
 echo ${array[0]}
 echo ${array[1]}
 echo ${array[2]}
@@ -62,13 +67,43 @@ two
 three
 #+end_example
 
-** Updating member of an array by dereferencing
 
+** Adding elements to an array
+Lets create an array and see an example of how we can easily add an element to the an array. Lets create a simple names array.
+
+*The syntax:*
+#+begin_src bash
+# secnario-1: incorrect
+fruits=("mango" "apple")
+echo "${fruits[@]}"
+fruits+=kiwi
+echo "${fruits[@]}"
+
+# scenario-2: correct
+names=("Angel" "Lucifer" "Michael")
+echo "${names[@]}"
+names+=("Devil")
+echo "${names[@]}"
+#+end_src
+
+#+begin_example
+mango apple
+mangokiwi apple
+Angel Lucifer Michael
+Angel Lucifer Michael Devil
+#+end_example
+
+Look at the *scenario-1*, whats happening is that, when we try to add kiwi to the fruits array using *+=* operator, ~fruits+=kiwi~, kiwi is being added to the first element of the array, instead of being added to the array itself, because, the var name at *LHS* ~(Left Hand Side)~, *fruits*, decays to the first element of the array, and adds to the first value, but in **scenatio-2*, we add an array containing one element ~("kiwi")~ to our initial array, so whats happening here is concatenation of two arrays. Arrays decay is explained at [[file:index.org::#arrays-decays-bash-id][Arrays decays to first element, when provided without an index.]]
+** Updating member of an array by dereferencing
+Array elements can be easily updated by dereferencing array at the desired index and assigning a new value to it. Below is an example.
 The syntax:
 #+begin_src bash
 array=(1 2 3)
+
 echo ${array[@]}
+
 array[2]=4
+
 echo ${array[*]}
 #+end_src
 
@@ -81,4 +116,98 @@ echo ${array[*]}
 [fn:1] To bypass the shell interpretation of expansion operators. If the index number is @ or *, all members of an array are referenced. view more at [[https://tldp.org/LDP/Bash-Beginners-Guide/html/Bash-Beginners-Guide.html#sect_10_02_02][Dereferencing the variables in an array]], from TLDP.
 
 ** Deleting array members
-To delete a member of an array,
+To delete a member of an array, the *unset* built-in can be used. The *unset* built-in is used to delete the array itelf and the members of the arrays.
+
+The syntax:
+#+begin_src bash
+array=(one two three)
+
+unset array[0]
+echo ${array[*]}
+
+unset array
+echo ${array[@]}
+#+end_src
+*Result*
+#+begin_example
+| two three |
+|           |
+#+end_example
+
+** Looping over an array
+Looping over an array in bash, can be acheived using either one of the loops, *for*, *while*, *until*. Lets use a *for* loop to loop over an array in bash.
+
+*** Iterating an array using for loop.
+The syntax:
+
+#+begin_src bash
+array=(one two three)
+for i in ${array[@]}; do
+    echo ${i}
+done
+#+end_src
+*Result*
+#+begin_example
+one
+two
+three
+#+end_example
+
+*** Iterating an array using while loop.
+:PROPERTIES:
+:ID:       1473e535-09e3-4e28-82ce-e6691cfef1e2
+:END:
+The syntax:
+
+#+begin_src bash
+# check if the given array as an empty string using for loop and count the number of recepients
+wholist=(
+     'Bob Smith <bob@example.com>'
+     'Jane L. Williams <jane@example.com>'
+     'Eric S. Raymond <esr@example.com>'
+     'Larry Wall <wall@example.com>'
+     'Linus Torvalds <linus@example.com>'
+)
+
+# scenario-1: the while loop
+count=0
+while [ "x${wholist[count]}" != "x" ]
+do
+   count=$(( $count + 1 ))
+done
+echo $count
+
+# scenario-2: using the for loop.
+# example: shell expansion issue, as didn't put var inside "${wholist[@]}"
+count2=0
+for i in ${wholist[@]}; do
+    count2=$(($count2+1))
+done
+echo "$count2"
+
+# scenario-3: using the for loop corrected.
+count3=0
+for i in "${wholist[@]}"; do
+    count3=$(($count3+1))
+done
+echo "$count3"
+
+#+end_src
+*Result*
+#+begin_example
+ 5
+17
+ 5
+#+end_example
+
+** Length of an array.
+To get the length of an array, we can use the ~#~ symbol in bash, along with ~*~, or ~@~ symbol which dereferences all members of arrays. This combo does two things, first we dereference all the memebrs of the array using the ~*~ or ~@~ symbol, and then the ~#~ symbol counts the numbers of positional parameters or numbers of elements in that dereferenced variable, i.e. an array.
+
+*The syntax:*
+#+begin_src bash
+array=(1 2 3 5 8 9)
+echo "${#array[@]}"
+#+end_src
+
+#+RESULTS:
+: 6

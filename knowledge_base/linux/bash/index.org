@@ -9,24 +9,36 @@
 #+EXPORT_FILE_NAME: /home/angel/xynapz/angeld/site-content/knowledge_base/linux/bash/index.html
 
 * Bash Documentation
-** [[./introduction.org][Introduction]]
-** [[./bash-invocation-and-startup.org][Bash Invocation & Startup]]
-** [[./exit-and-exit-status.org][Exit & Exit Status]]
-** [[./logging.org][Echo/Logging]]
-** [[./variables.org][Variables]]
-** [[./arrays.org][Arrays]]
-** [[./quoting-expansions.org][Quoting & Exansion]]
-** [[./regular-expressions.org][Regular Expressions]]
-** [[./cmd-find.org][The /find/ command.]]
-** [[./cmd-grep.org][The /grep/ command.]]
-** [[./cmd-sed.org][The /sed/ stream editor.]]
-** [[./cmd-awk.org][The /awk/ programming language.]]
-** [[./conditionals.org][Conditional Statements]]
-*** [[file:conditionals.org::#if-elif-else][if-elif-else]]
-*** [[file:conditionals.org::#case-statements][CASE Statements]]
-** [[./loops.org][Loops and Iteration]]
-*** [[file:loops.org::#for-loops][The for loop.]]
-*** [[file:loops.org::#while-loop][The while loop.]]
-*** [[file:loops.org::#until-loop][The until loop.]]
-** [[./functions.org][Functions]]
+** Analysys and Findings
+*** Variable Quoting When Referencing
+Always quote variables within ~"${VAR}"~ double-quotes, to avoid unnecessary shell-expansion that bash does in the background. See an example of this issue in looping over an array section in [[id:1473e535-09e3-4e28-82ce-e6691cfef1e2][Iterating an array using while loop,]] (see the code #scenario-2)in the code block.
+
+*** Arrays decays to first element, when provided without an index.
+:PROPERTIES:
+:CUSTOM_ID: arrays-decays-bash-id
+:END:
+The array in bash I, think is kinda similar to arrays in the *c programming language* as in c when we pass an array to a function, it decays to the pointer to the first element in the array. In bash it is kind-of similar, as this decay happend everywhere in bash not just when passing to functions. Example, when I refer to an array without providing an index, the array variable decays down to the first element of the array in just the place it was refered.
+
+** Categorized topics
+- [[./introduction.org][Introduction]]
+- [[./bash-invocation-and-startup.org][Bash Invocation & Startup]]
+- [[./exit-and-exit-status.org][Exit & Exit Status]]
+- [[./logging.org][Echo/Logging]]
+- [[./variables.org][Variables]]
+- [[./arrays.org][Arrays]]
+- [[./quoting-expansions.org][Quoting & Exansion]]
+- [[./regular-expressions.org][Regular Expressions]]
+- [[./cmd-find.org][The /find/ command.]]
+- [[./cmd-grep.org][The /grep/ command.]]
+- [[./cmd-sed.org][The /sed/ stream editor.]]
+- [[./cmd-awk.org][The /awk/ programming language.]]
+- [[./conditionals.org][Conditional Statements]]
+  - [[file:conditionals.org::#if-elif-else][if-elif-else]]
+  - [[file:conditionals.org::#case-statements][CASE Statements]]
+- [[./loops.org][Loops and Iteration]]
+  - [[file:loops.org::#for-loops][The for loop.]]
+  - [[file:loops.org::#while-loop][The while loop.]]
+  - [[file:loops.org::#until-loop][The until loop.]]
+  - [[file:loops.org::#until-loop][Until Loop]]
+- [[./functions.org][Functions]]
 

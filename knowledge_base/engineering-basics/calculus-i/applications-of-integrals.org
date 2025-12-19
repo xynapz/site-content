@@ -8,6 +8,6 @@
 #+XZHH_UPDATED_DATE: 2025-12-16
 #+XZHH_ORDER: 5
 #+EXPORT_FILE_NAME:
-/home/angel/xynapz/angeld/content/writings/engineering-basics/calculus-i/applications-of-integrals.html
+/home/angel/xynapz/angeld/site-content/knowledge_base/engineering-basics/calculus-i/applications-of-integrals.html
 
 * Applications of Integrals
