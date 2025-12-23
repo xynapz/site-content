@@ -47,3 +47,213 @@ lsblk
 #+end_example
 
 My goal is to completely wipe my disk and create three partitions for efi, swap and root for my gentoo installation, I'll be replacing arch btw. First action on partitioning is select our drive with fdisk, to furthur do some commands and actions.
+
+** Creating EFI System Partition (ESP)
+- Run ~fdisk /dev/nvme0n1~ to enter the interactive menu.
+- **Create a fresh Label:** Press ~g~ to create a new empty **GPT** partition table.
+- **Partition 1 (ESP):**
+  - Press ~n~, select partition ~1~, default first sector, set last sector to ~+1G~.
+  - **Type:** Press ~t~, select partition ~1~, enter code ~1~ (EFI System).
+- **Partition 2 (Swap):**
+  - Press ~n~, select partition ~2~, set last sector to ~+16G~ (Matching RAM size).
+  - **Type:** Press ~t~, select partition ~2~, enter code ~19~ (Linux Swap).
+- **Partition 3 (Root):**
+  - Press ~n~, select partition ~3~, default last sector (Takes remaining space).
+  - **Type:** Press ~t~, select partition ~3~, enter code ~20~ (Linux Filesystem).
+- **Write Changes:** Press ~w~ to write table to disk and exit.
+
+** Formatting the Filesystems
+Since I am prioritizing a robust and modern setup, I will be using **Btrfs** for the root filesystem. Btrfs allows for subvolumes (separating system data from user data) and snapshots, which are invaluable for rolling back updates if something breaks.
+
+#+begin_src bash
+# Format the ESP as FAT32 (Required by UEFI)
+mkfs.vfat -F 32 -n "EFI" /dev/nvme0n1p1
+
+# Initialize and activate Swap
+mkswap /dev/nvme0n1p2
+swapon /dev/nvme0n1p2
+
+# Format Root as Btrfs
+mkfs.btrfs -L "gentoo" /dev/nvme0n1p3
+#+end_src
+
+** Creating Btrfs Subvolumes
+Before installing, we need to create the subvolume layout. This separates the root filesystem ~@~ from the home directory ~@home~, making backups and reinstalls significantly cleaner.
+
+#+begin_src bash
+# Mount the raw partition temporarily
+mount /dev/nvme0n1p3 /mnt/gentoo
+
+# Create subvolumes
+btrfs subvolume create /mnt/gentoo/@
+btrfs subvolume create /mnt/gentoo/@home
+btrfs subvolume create /mnt/gentoo/@snapshots
+
+# Unmount to finalize layout
+umount /mnt/gentoo
+#+end_src
+
+** Mounting the Subvolumes
+Now we mount the specific subvolumes with optimized options. I use ~zstd~ compression to save disk space and increase SSD longevity by reducing write amplification.
+
+#+begin_src bash
+# Mount Root (@) with compression and performance options
+mount -o noatime,compress=zstd,space_cache=v2,subvol=@ /dev/nvme0n1p3 /mnt/gentoo
+
+# Create mount points
+mkdir --parents /mnt/gentoo/{home,efi}
+
+# Mount Home (@home)
+mount -o noatime,compress=zstd,space_cache=v2,subvol=@home /dev/nvme0n1p3 /mnt/gentoo/home
+
+# Mount ESP
+mount /dev/nvme0n1p1 /mnt/gentoo/efi
+#+end_src
+
+* Installing Stage 3 Tarball
+** Setting the Date
+#+begin_src bash
+chronyd -q
+#+end_src
+
+** Downloading and Unpacking Stage 3
+I am using the **Systemd** profile. Navigate to the mount point and download the stage3 tarball from a mirror (under ~releases/amd64/autobuilds/~).
+
+#+begin_src bash
+cd /mnt/gentoo
+# Use 'links' to find the URL for stage3-amd64-systemd-mergedusr
+# Download the tarball
+wget <stage3_url>
+
+# Unpack preserving extended attributes (crucial for systemd)
+tar xpvf stage3-*.tar.xz --xattrs-include='*.*' --numeric-owner
+#+end_src
+
+* Configuring Compilation Options (make.conf)
+This file dictates how Portage compiles every package.
+#+begin_src bash
+nano -w /mnt/gentoo/etc/portage/make.conf
+#+end_src
+
+My standard configuration:
+#+begin_src conf
+COMMON_FLAGS="-march=native -O2 -pipe"
+CFLAGS="${COMMON_FLAGS}"
+CXXFLAGS="${COMMON_FLAGS}"
+FCFLAGS="${COMMON_FLAGS}"
+FFLAGS="${COMMON_FLAGS}"
+
+# Parallel compilation: (Total Threads + 1)
+MAKEOPTS="-j13"
+
+# Accept all licenses (for firmware/microcode)
+ACCEPT_LICENSE="*"
+
+# Video Cards (Adjust for your hardware)
+VIDEO_CARDS="intel"
+#+end_src
+
+* Installing the Base System
+** Preparing Chroot Environment
+We need to copy DNS settings and mount pseudo-filesystems so the chroot environment can access the hardware and internet.
+
+#+begin_src bash
+cp --dereference /etc/resolv.conf /mnt/gentoo/etc/
+
+mount --types proc /proc /mnt/gentoo/proc
+mount --rbind /sys /mnt/gentoo/sys
+mount --make-rslave /mnt/gentoo/sys
+mount --rbind /dev /mnt/gentoo/dev
+mount --make-rslave /mnt/gentoo/dev
+mount --bind /run /mnt/gentoo/run
+mount --make-slave /mnt/gentoo/run
+#+end_src
+
+** Entering the Chroot
+#+begin_src bash
+chroot /mnt/gentoo /bin/bash
+source /etc/profile
+export PS1="(chroot) ${PS1}"
+#+end_src
+
+** Syncing Portage
+#+begin_src bash
+emerge-webrsync
+#+end_src
+
+* System Configuration
+** Profile, Timezone, and Locale
+#+begin_src bash
+# Select Systemd profile
+eselect profile list
+eselect profile set <number>
+
+# Timezone
+ln -sf /usr/share/zoneinfo/Canada/Eastern /etc/localtime
+
+# Locale generation
+echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
+locale-gen
+localectl set-locale LANG=en_US.UTF-8
+#+end_src
+
+** Firmware and Filesystem Tools
+Since we are using Btrfs, we *must* install ~btrfs-progs~ so the OS can manage the filesystem. We also need CPU microcode.
+
+#+begin_src bash
+emerge --ask sys-kernel/linux-firmware
+emerge --ask sys-firmware/intel-microcode
+emerge --ask sys-fs/btrfs-progs
+#+end_src
+
+* The Kernel
+I prefer the ~gentoo-kernel-bin~ for reproducibility and speed. It comes with Btrfs support pre-enabled.
+
+#+begin_src bash
+emerge --ask sys-kernel/gentoo-kernel-bin
+#+end_src
+
+* Configuring the Bootloader
+** Editing Fstab
+We need to configure ~fstab~ to mount our Btrfs subvolumes correctly. Use ~blkid~ to find your UUIDs.
+
+#+begin_src bash
+nano -w /etc/fstab
+#+end_src
+
+#+begin_src conf
+# <fs>                  <mountpoint> <type>  <opts>                                       <dump/pass>
+UUID=<UUID_ESP>         /efi         vfat    umask=0077                                   0 2
+UUID=<UUID_SWAP>        none         swap    sw                                           0 0
+UUID=<UUID_ROOT>        /            btrfs   defaults,noatime,compress=zstd,subvol=@      0 0
+UUID=<UUID_ROOT>        /home        btrfs   defaults,noatime,compress=zstd,subvol=@home  0 0
+#+end_src
+
+** Installing GRUB
+#+begin_src bash
+emerge --ask sys-boot/grub
+grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=Gentoo
+grub-mkconfig -o /boot/grub/grub.cfg
+#+end_src
+
+* Finalizing
+** Network and Users
+#+begin_src bash
+emerge --ask net-misc/networkmanager
+systemctl enable NetworkManager
+
+# Set Root Password
+passwd
+
+# Create User
+useradd -m -G users,wheel,audio,video -s /bin/bash angel
+passwd angel
+#+end_src
+
+** Reboot
+#+begin_src bash
+exit
+umount -l /mnt/gentoo/dev{/shm,/pts,}
+umount -R /mnt/gentoo
+reboot
+#+end_src
