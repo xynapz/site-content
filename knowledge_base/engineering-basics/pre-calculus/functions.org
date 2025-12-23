@@ -42,19 +42,6 @@ A graph represents a function if and only if no vertical line intersects the gra
 - *Example:* A circle \( x^2 + y^2 = r^2 \) is **not** a function (fails the test).
 - *Example:* A parabola \( y = x^2 \) **is** a function.
 
-* Classification of Functions
-Functions in engineering are generally categorized as follows:
-
-| Category | Type | Example | Engineering Application |
-|----------|------|---------|-------------------------|
-| **Algebraic** | Linear | \( f(x) = mx + b \) | Ohm's Law (\(V=IR\)) |
-| | Quadratic | \( f(x) = ax^2 + bx + c \) | Projectile Motion |
-| | Polynomial | \( f(x) = a_n x^n + \dots \) | Structural beam deflection |
-| | Rational | \( f(x) = \frac{P(x)}{Q(x)} \) | Control systems (Transfer functions) |
-| **Transcendental** | Exponential | \( f(x) = e^x \) | Capacitor charging/discharging |
-| | Logarithmic | \( f(x) = \ln(x) \) | Signal processing (Decibels) |
-| | Trigonometric | \( f(x) = \sin(x) \) | AC Circuits, Vibrations |
-
 * Function Operations
 
 ** Composition of Functions
@@ -67,20 +54,8 @@ The inverse function, denoted \( f^{-1}(x) \), reverses the operation of \( f \)
 - *Condition:* A function must be **one-to-one** (passes the Horizontal Line Test) to have an inverse.
 - *Relationship:* \( f(f^{-1}(x)) = x \) and \( f^{-1}(f(x)) = x \).
 
-* Graphical Visualization
-Visualizing functions is essential for understanding behavior. Below is a Python script embedded in this note to generate a plot of basic functions.
-
-#+begin_src python
-import matplotlib as plt
-#+end_src
-
-#+CAPTION: A comparison of linear, quadratic, and cubic growth.
-#+RESULTS:
-[[file:function_comparison.png]]
-
 * Concept Diagram: The Black Box
-Since we cannot render complex diagrams in plain text, we often use text-based representations or link to resources.
-
+Below is a simple diagram that shows the concept of the fucntion.
 #+BEGIN_EXPORT html
 <pre class="mermaid">
 flowchart LR
@@ -96,5 +71,4 @@ flowchart LR
 
 * References & Further Reading
 - Stewart, J. (2015). *Calculus: Early Transcendentals*. Cengage Learning.
-- [[https://angeld.me/writings/engineering-basics/pre-calculus][Return to Pre-Calculus Index]]
 - [[https://hyperphysics.phy-astr.gsu.edu/hbase/index.html][HyperPhysics: Math for Physics]]

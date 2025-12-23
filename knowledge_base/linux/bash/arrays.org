@@ -154,7 +154,7 @@ three
 
 *** Iterating an array using while loop.
 :PROPERTIES:
-:ID:       1473e535-09e3-4e28-82ce-e6691cfef1e2
+:CUSTOM_ID: while-loop-iter
 :END:
 The syntax:
 

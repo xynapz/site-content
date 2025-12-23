@@ -10,9 +10,21 @@
 #+XZHH_ORDER: 9
 
 * The /find/ command
-The /find/ command[fn:1] is used to search for files in a directory hierarchy. The general synposis of the find command is */find [options] [starting-point] [expressions]/*.
+The /find/ command[fn:1] is used to search for files in a directory hierarchy. The general synposis of the find command is */find [options] [path] [expressions]/*.
 
 ** Options
-Options control the behaviour of the find command, like treatment of symbolic links. The five real 'options' *-H*, *-L*, *-P*, *-D* and *-O* must appear before the first path name, if they are being used at all. The *-H*, *-L*, *-P* options control the treatment of symbolic links
+Options control the behaviour of the find command, like treatment of symbolic links. The five real 'options' *-H*, *-L*, *-P*, *-D* and *-O* must appear before the first path name, if they are being used at all. The *-H*, *-L*, *-P* options control the treatment of symbolic links. -D and -O are used for debug options and optimization level respectively.
+
+*-P (Don't Follow Symbolic Link)*: This option is the default if you dont pass any options, to the find command. This option tells the find command when searching for files, and directories, don't follow the symbolic links.
+
+*-L (Follow Symblic Links)*: This option tells the find command to follow the symbolic links. When using this option, the find command, takes the properties of the file the link points to, not the link itself.
+
+*-H (Follow Symbolic Link of File Arguments)*: This option doesnt' follow symbolic links, but has a exception to this, i.e. if a file specified on the find command argument is a symbolic link, then the properties of orginal files is examined, not the symbolic link provided in command argument. If *maxdepth 0* is used that would prevent *-H* behaviour we just discussed.
+
+If all there are being used than, each option overrides the other one, and only the option specified at last will take effect.
+
+*-D (debugopts)*: This option is used for diagnostic, debugging, troubleshooting when anything unexpected result occurs on executing the find command.
+
+*-0 (Olevel)*: This option is used to handle query optimization. Ther are levels of optimization provided to the user. There are a total of three optimization level ~(1, 2, 3)~.
 
 [fn:1] See the [[https://man7.org/linux/man-pages/man1/find.1.html][find(1) man page]] for full documentation.

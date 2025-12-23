@@ -11,7 +11,7 @@
 * Bash Documentation
 ** Analysys and Findings
 *** Variable Quoting When Referencing
-Always quote variables within ~"${VAR}"~ double-quotes, to avoid unnecessary shell-expansion that bash does in the background. See an example of this issue in looping over an array section in [[id:1473e535-09e3-4e28-82ce-e6691cfef1e2][Iterating an array using while loop,]] (see the code #scenario-2)in the code block.
+Always quote variables within ~"${VAR}"~ double-quotes, to avoid unnecessary shell-expansion that bash does in the background. See an example of this issue in looping over an array section in [[file:arrays.org::#while-loop-iter][Iterating an array using while loop]](see the code #scenario-2)in the code block.
 
 *** Arrays decays to first element, when provided without an index.
 :PROPERTIES:
@@ -40,4 +40,3 @@ The array in bash I, think is kinda similar to arrays in the *c programming lang
   - [[file:loops.org::#while-loop][The while loop.]]
   - [[file:loops.org::#until-loop][The until loop.]]
 - [[./functions.org][Functions]]
-

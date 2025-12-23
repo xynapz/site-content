@@ -1,0 +1,49 @@
+#+TITLE: Gentoo Installation and Setup
+#+AUTHOR: Angel Dhakal
+#+DATE: 2025-12-22
+#+DESCRIPTION: This post is my prefered installation and setup of gentoo linux distribution.
+#+KEYWORDS: linux, kernel, system, installation, install, setup, bare-metal, systemd
+#+OPTIONS: ^:{} num:nil toc:5 html-postamble:nil
+#+HTML_HEAD: <meta name="pub_date" content="2025-12-22" />
+#+HTML_HEAD: <meta name="updated_date" content="2025-12-22" />
+#+EXPORT_FILE_NAME: /home/angel/xynapz/angeld/site-content/knowledge_base/linux/gentoo-installation-and-setup.html
+
+* Gentoo Installation & Setup
+This is my guide and walkthrough of installing and setting up a reproducable gentoo environment. The packages installed here are the ones I use, as I dont like random packages installed in my system and worse of all, running as a process.
+
+* Download Iso and Creating a Bootable Media
+I will be using the Minimal Installation CD provided in the gentoo's website downloads page. After the download is done, I will be burning the iso to my USB type-c pen-drive, which is 32GB in size, which is an overkill for a 700MB gentoo's iso media file. Lets burn the iso to our external drive.
+
+#+begin_src bash
+cd Downloads/
+sudo dd if=install-amd64-minimal-20251221T154556Z.iso of=/dev/sda bs=4096 status=progress && sync
+#+end_src
+The above command is copied from gentoo's installation handbook, dd is a linux command line utility, that burns iso files to internal or external storage drives.
+
+* Boot into the installtion media
+For booting into the newly created installation media (the pen drive), figure out your boot device selection mebu keybinding from your manufacturer (mine is ~ESC~), reboot your system. During the inital bootup select the gentoo installation medium we created. This will open a menu showing some options to boot to gentoo. Select the first option i.e. ~TODO: INSTALLTION BOOT OPTION~.
+
+* Network Setup
+I have an ehternet connection to my laptop, so I dont have to go through the hassle of setting up WiFi, If I ever need to setup WiFi connection, that is not during installation, I'll do that when i need it, so I'll skip that section entirely. The gentoo documentation has a good manual on setting that up check it out.
+
+* Partitioning the disk
+Partitioning the disk is not that hard as people mention it be. You just have to understand your particlular storage drive, HDD or SDD, they are default mounted to ~/dev~ directory at the root, first lets understand these so called block devices handle naming and their partitions identifiers. If your storage device is the old Hard-Disks, then its ~/dev/sd{a,b,c}~, if its a Solid-State-Drive, then its ~/dev/nvme0{n1,n2}~. These are called block device handle, and they uniquely represent a storage device. When partitioning them, each partion takes the parent's name as the base, appended with its own identifier like ~sda{1,2}~, ~nvme0n1{p1,p2}~, the thing that is making these two partitions identified as two parts of same device is their name identifiers apart from their parent's base name i.e. ~1, 2, p1, p2~ for this example. This is an easy way to remember block-device handles, so that we dont have to often ~lsblk~ the list of devices.
+
+After that is planning how we want to partition our disks, whether we want to create 3 simple partitions (for efi, swap & root) or we want to create multiple partitions for ~/home, /boot, /etc, /sbin, etc~ then that will be slightly extra works, but not a problem. But my usecase is the simple approach, just create 3 partitions, one for efi, swap and the root file system. To create the partitions from my disks i'll be using ~fdisk~ utility, which is already installed in most of the other linux distributions as well.
+
+*First lets see my current partitions*
+#+begin_src bash
+lsblk
+#+end_src
+
+#+begin_example
+| NAME                  | MAJ:MIN | RM | SIZE   | RO | TYPE | MOUNTPOINTS |
+| zram0                 |   253:0 |  0 | 4G     |  0 | disk | [SWAP]      |
+| nvme0n1               |   259:0 |  0 | 476.9G |  0 | disk |             |
+| ├─nvme0n1p1           |   259:1 |  0 | 1G     |  0 | part | /boot       |
+| └─nvme0n1p2           |   259:2 |  0 | 475.9G |  0 | part | /var/log    |
+| /home                 |         |    |        |    |      |             |
+| /var/cache/pacman/pkg |         |    |        |    |      |             |
+#+end_example
+
+My goal is to completely wipe my disk and create three partitions for efi, swap and root for my gentoo installation, I'll be replacing arch btw. First action on partitioning is select our drive with fdisk, to furthur do some commands and actions.

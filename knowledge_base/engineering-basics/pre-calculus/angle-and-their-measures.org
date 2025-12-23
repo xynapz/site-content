@@ -10,4 +10,21 @@
 #+EXPORT_FILE_NAME: /home/angel/xynapz/angeld/site-content/knowledge_base/engineering-basics/pre-calculus/angle-and-their-measures.html
 
 * Angle and their measures
+
+** Rays
 A ray is a line that has a fixed starting point but doesn't have a fixed endpoint, rays have one fixed endpoint and extend to infinity. So, the measurement of a ray is not possible.
+
+** Vertex and Angles
+When two rays share the same endpoint, they form an angle, that shared endpoint is called a vertex. A vertex is a point shared by the initial ray and the terminal ray of an angle. Another, a vertex is a common endpoint of two rays that form an angle.
+
+When the initial ray and the terminal ray are directly opposite to each other, they form a straight angle.
+
+[[file:~/xynapz/pub_img/engineering_basics/straight_angle.png]]
+
+#+begin_quote
+One complete revolution as shown below is 360 Degrees, and parts of a revolution are measured proportionately. Thus half of a revolution (a straight angle) measures 180 Degrees, a quarter of a revolution (a right angle) measures 90 Degrees and so on.
+#+end_quote
+
+#+begin_quote
+if an angle measures strictly between 0 Degrees and 90 Degrees, it is called an acute angle and if it measures strictly between 90 Degrees and 180 Degrees it is called an obtuse angle.
+#+end_quote
